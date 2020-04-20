@@ -11,13 +11,6 @@ import com.study.practice.springboot.entityclass.student.Student;
 */
 public interface StudentService {
 
-    /**
-    * 查询多条数据
-    *
-    * @param student 查询参数
-    * @return 对象列表
-    */
-    List<Student> pages(Student student);
 
     /**
     * 查询所有数据
@@ -25,40 +18,5 @@ public interface StudentService {
     * @return 对象列表
     */
     List<Student> getAll();
-
-    /**
-    * 新增数据
-    *
-    * @param student 实例对象
-    * @param student    操作人
-    * @return 实例对象
-    */
-    Student add(Student student);
-
-    /**
-    * 通过ID查询单条数据
-    *
-    * @param studentId 主键
-    * @return 实例对象
-    */
-    Student getById(Long studentId);
-
-
-    /**
-    * 修改数据
-    *
-    * @param student 实例对象
-    * @param student    操作人
-    * @return 实例对象
-    */
-    Student update(Student student);
-
-    /**
-    * 通过主键删除数据
-    *
-    * @param studentId 主键
-    * @return 是否成功
-    */
-    boolean deleteById(Long studentId);
 
 }
