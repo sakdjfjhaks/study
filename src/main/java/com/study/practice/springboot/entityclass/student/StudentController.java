@@ -35,5 +35,10 @@ public class StudentController {
         List<Student> list = this.service.getAll();
         return list;
     }
+    @ApiOperation(value = "测试", notes = "测试")
+    @PostMapping(value = "/test")
+    public String test() {
+        return "list";
+    }
 
 }
