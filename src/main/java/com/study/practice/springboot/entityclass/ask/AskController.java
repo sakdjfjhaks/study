@@ -27,15 +27,15 @@ public class AskController {
 
     @PostMapping(value = "/addNumAsk")
     public BaseResponse addNumAsk() {
-        askService.addNumAsk();
+        askService.addNumAsk(20000);
         System.out.println("111");
         return new BaseResponse(true, "获取成功");
     }
 
-    @PostMapping("/add")
-    public BaseResponse add(@RequestBody Ask ask) {
-        Ask newAsk = askService.add(ask);
-        return new BaseResponse(true, "添加成功", newAsk);
+    @PostMapping("/addNumAskContent")
+    public BaseResponse addNumAskContent() {
+        askService.addNumAskContent(10000);
+        return new BaseResponse(true, "添加成功");
     }
 
 

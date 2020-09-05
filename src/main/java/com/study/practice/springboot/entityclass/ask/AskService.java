@@ -1,5 +1,6 @@
 package com.study.practice.springboot.entityclass.ask;
 
+import com.study.practice.base.paramter.constant.ContentConstant;
 import com.study.practice.base.utils.SnowFlakeId;
 import org.springframework.stereotype.Service;
 
@@ -23,14 +24,30 @@ public class AskService {
      *
      * @return 对象列表
      */
-    public void addNumAsk() {
+    public void addNumAsk(Integer num) {
+        if(num<=0){
+            return;
+        }
         Ask ask = new Ask();
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < num; i++) {
             ask.setAskContent("第一时间," + i + ",问答测试");
             this.add(ask);
         }
     }
+    public void addNumAskContent(Integer num) {
+        if(num<=0){
+            return;
+        }
+        Integer length = ContentConstant.CONTENT_CONSTANT.length;
+        Ask ask = new Ask();
+        for (int i = 0; i < num; i++) {
+            for(String content:ContentConstant.CONTENT_CONSTANT){
+                ask.setAskContent( i +content);
+                this.add(ask);
+            }
 
+        }
+    }
     public Ask add(Ask ask) {
         ask.setAskId(SnowFlakeId.generateID());
         ask.setCreateTime(Calendar.getInstance().getTime());
