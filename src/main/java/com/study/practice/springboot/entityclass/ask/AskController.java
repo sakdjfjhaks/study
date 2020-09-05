@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*
-* 提问
-* @author zhangkui
-* @date  2020-04-26
-*/
+ * 提问
+ *
+ * @author zhangkui
+ * @date 2020-04-26
+ */
 @RestController
 @Scope("request")
 @RequestMapping("/ask")

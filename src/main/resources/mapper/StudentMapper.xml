@@ -74,35 +74,35 @@
     <update id="update" parameterType="com.study.practice.springboot.entityclass.student.Student">
         update student
         <set>
-           <if test="studentPhone != null ">
-              student_phone = #{studentPhone,jdbcType=INTEGER},
-           </if>
-           <if test="studentPassword != null and studentPassword !='' ">
-              student_password = #{studentPassword,jdbcType=VARCHAR},
-           </if>
-           <if test="address != null ">
-              address = #{address,jdbcType=INTEGER},
-           </if>
-           <if test="parentFather != null ">
-              parent_father = #{parentFather,jdbcType=INTEGER},
-           </if>
-           <if test="parentMother != null ">
-              parent_mother = #{parentMother,jdbcType=INTEGER},
-           </if>
-           <if test="admissionTime != null ">
-              admission_time = #{admissionTime,jdbcType=TIMESTAMP},
-           </if>
-           <if test="graduationTime != null ">
-              graduation_time = #{graduationTime,jdbcType=TIMESTAMP},
-           </if>
-           <if test="studentName != null and studentName !='' ">
-              student_name = #{studentName,jdbcType=VARCHAR},
-           </if>
-           <if test="studentSchool != null ">
-              student_school = #{studentSchool,jdbcType=INTEGER}
-           </if>
+            <if test="studentPhone != null ">
+                student_phone = #{studentPhone,jdbcType=INTEGER},
+            </if>
+            <if test="studentPassword != null and studentPassword !='' ">
+                student_password = #{studentPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null ">
+                address = #{address,jdbcType=INTEGER},
+            </if>
+            <if test="parentFather != null ">
+                parent_father = #{parentFather,jdbcType=INTEGER},
+            </if>
+            <if test="parentMother != null ">
+                parent_mother = #{parentMother,jdbcType=INTEGER},
+            </if>
+            <if test="admissionTime != null ">
+                admission_time = #{admissionTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="graduationTime != null ">
+                graduation_time = #{graduationTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="studentName != null and studentName !='' ">
+                student_name = #{studentName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentSchool != null ">
+                student_school = #{studentSchool,jdbcType=INTEGER}
+            </if>
         </set>
-        where student_id= #{studentId,jdbcType=INTEGER} 
+        where student_id= #{studentId,jdbcType=INTEGER}
     </update>
     <!--详情-->
     <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">

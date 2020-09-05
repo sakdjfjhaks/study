@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author wangkun
@@ -18,27 +17,19 @@ import java.util.List;
 @Scope("request")
 @RequestMapping("/shop")
 
-public class ShopController  {
+public class ShopController {
 
     @Resource
     private ShopService service;
-
-
-
-
-
 
 
     /**
      * 详情
      **/
     @PostMapping("/detail")
-    public BaseResponse  detail(@RequestBody Shop shop) {
+    public BaseResponse detail(@RequestBody Shop shop) {
         return null;
     }
-
-
-
 
 
 }

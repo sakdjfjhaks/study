@@ -1,202 +1,203 @@
 package com.study.practice.springboot.entityclass.ask;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
-* 提问
-*
-* @author zhangkui
-* @date  2020-04-26
-*/
+ * 提问
+ *
+ * @author zhangkui
+ * @date 2020-04-26
+ */
 
 public class Ask {
-        private Long askId;
+    private Long askId;
 
-        private Long customerId;
+    private Long customerId;
 
-        private String customerNickName;
+    private String customerNickName;
 
-        private String customerAvatar;
+    private String customerAvatar;
 
-        private String customerSign;
+    private String customerSign;
 
-        private String askContent;
+    private String askContent;
 
-        private BigDecimal momentsLat;
+    private BigDecimal momentsLat;
 
-        private BigDecimal momentsLng;
+    private BigDecimal momentsLng;
 
-        private String address;
+    private String address;
 
-        private String shortContent;
+    private String shortContent;
 
-        private String shortPicture;
+    private String shortPicture;
 
-        private Integer likeNum;
+    private Integer likeNum;
 
-        private Integer visitNum;
+    private Integer visitNum;
 
-        private Integer answerNum;
+    private Integer answerNum;
 
-        private Long creator;
+    private Long creator;
 
-        private Date createTime;
+    private Date createTime;
 
-        private Date modifyTime;
+    private Date modifyTime;
 
-        private Long modifyor;
+    private Long modifyor;
 
-        private Integer deleteState;
+    private Integer deleteState;
 
-        public Long getAskId() {
-                return askId;
-        }
+    public Long getAskId() {
+        return askId;
+    }
 
-        public void setAskId(Long askId) {
-                this.askId = askId;
-        }
+    public void setAskId(Long askId) {
+        this.askId = askId;
+    }
 
-        public Long getCustomerId() {
-                return customerId;
-        }
+    public Long getCustomerId() {
+        return customerId;
+    }
 
-        public void setCustomerId(Long customerId) {
-                this.customerId = customerId;
-        }
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
 
-        public String getCustomerNickName() {
-                return customerNickName;
-        }
+    public String getCustomerNickName() {
+        return customerNickName;
+    }
 
-        public void setCustomerNickName(String customerNickName) {
-                this.customerNickName = customerNickName;
-        }
+    public void setCustomerNickName(String customerNickName) {
+        this.customerNickName = customerNickName;
+    }
 
-        public String getCustomerAvatar() {
-                return customerAvatar;
-        }
+    public String getCustomerAvatar() {
+        return customerAvatar;
+    }
 
-        public void setCustomerAvatar(String customerAvatar) {
-                this.customerAvatar = customerAvatar;
-        }
+    public void setCustomerAvatar(String customerAvatar) {
+        this.customerAvatar = customerAvatar;
+    }
 
-        public String getCustomerSign() {
-                return customerSign;
-        }
+    public String getCustomerSign() {
+        return customerSign;
+    }
 
-        public void setCustomerSign(String customerSign) {
-                this.customerSign = customerSign;
-        }
+    public void setCustomerSign(String customerSign) {
+        this.customerSign = customerSign;
+    }
 
-        public String getAskContent() {
-                return askContent;
-        }
+    public String getAskContent() {
+        return askContent;
+    }
 
-        public void setAskContent(String askContent) {
-                this.askContent = askContent;
-        }
+    public void setAskContent(String askContent) {
+        this.askContent = askContent;
+    }
 
-        public BigDecimal getMomentsLat() {
-                return momentsLat;
-        }
+    public BigDecimal getMomentsLat() {
+        return momentsLat;
+    }
 
-        public void setMomentsLat(BigDecimal momentsLat) {
-                this.momentsLat = momentsLat;
-        }
+    public void setMomentsLat(BigDecimal momentsLat) {
+        this.momentsLat = momentsLat;
+    }
 
-        public BigDecimal getMomentsLng() {
-                return momentsLng;
-        }
+    public BigDecimal getMomentsLng() {
+        return momentsLng;
+    }
 
-        public void setMomentsLng(BigDecimal momentsLng) {
-                this.momentsLng = momentsLng;
-        }
+    public void setMomentsLng(BigDecimal momentsLng) {
+        this.momentsLng = momentsLng;
+    }
 
-        public String getAddress() {
-                return address;
-        }
+    public String getAddress() {
+        return address;
+    }
 
-        public void setAddress(String address) {
-                this.address = address;
-        }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-        public String getShortContent() {
-                return shortContent;
-        }
+    public String getShortContent() {
+        return shortContent;
+    }
 
-        public void setShortContent(String shortContent) {
-                this.shortContent = shortContent;
-        }
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
+    }
 
-        public String getShortPicture() {
-                return shortPicture;
-        }
+    public String getShortPicture() {
+        return shortPicture;
+    }
 
-        public void setShortPicture(String shortPicture) {
-                this.shortPicture = shortPicture;
-        }
+    public void setShortPicture(String shortPicture) {
+        this.shortPicture = shortPicture;
+    }
 
-        public Integer getLikeNum() {
-                return likeNum;
-        }
+    public Integer getLikeNum() {
+        return likeNum;
+    }
 
-        public void setLikeNum(Integer likeNum) {
-                this.likeNum = likeNum;
-        }
+    public void setLikeNum(Integer likeNum) {
+        this.likeNum = likeNum;
+    }
 
-        public Integer getVisitNum() {
-                return visitNum;
-        }
+    public Integer getVisitNum() {
+        return visitNum;
+    }
 
-        public void setVisitNum(Integer visitNum) {
-                this.visitNum = visitNum;
-        }
+    public void setVisitNum(Integer visitNum) {
+        this.visitNum = visitNum;
+    }
 
-        public Integer getAnswerNum() {
-                return answerNum;
-        }
+    public Integer getAnswerNum() {
+        return answerNum;
+    }
 
-        public void setAnswerNum(Integer answerNum) {
-                this.answerNum = answerNum;
-        }
+    public void setAnswerNum(Integer answerNum) {
+        this.answerNum = answerNum;
+    }
 
-        public Long getCreator() {
-                return creator;
-        }
+    public Long getCreator() {
+        return creator;
+    }
 
-        public void setCreator(Long creator) {
-                this.creator = creator;
-        }
+    public void setCreator(Long creator) {
+        this.creator = creator;
+    }
 
-        public Date getCreateTime() {
-                return createTime;
-        }
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-        public void setCreateTime(Date createTime) {
-                this.createTime = createTime;
-        }
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-        public Date getModifyTime() {
-                return modifyTime;
-        }
+    public Date getModifyTime() {
+        return modifyTime;
+    }
 
-        public void setModifyTime(Date modifyTime) {
-                this.modifyTime = modifyTime;
-        }
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 
-        public Long getModifyor() {
-                return modifyor;
-        }
+    public Long getModifyor() {
+        return modifyor;
+    }
 
-        public void setModifyor(Long modifyor) {
-                this.modifyor = modifyor;
-        }
+    public void setModifyor(Long modifyor) {
+        this.modifyor = modifyor;
+    }
 
-        public Integer getDeleteState() {
-                return deleteState;
-        }
+    public Integer getDeleteState() {
+        return deleteState;
+    }
 
-        public void setDeleteState(Integer deleteState) {
-                this.deleteState = deleteState;
-        }
+    public void setDeleteState(Integer deleteState) {
+        this.deleteState = deleteState;
+    }
 }

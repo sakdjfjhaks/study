@@ -1,6 +1,5 @@
 package com.study.practice.base.utils;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.regex.Pattern;
@@ -104,10 +103,11 @@ public class SnowFlakeId {
 
     /**
      * 获取六位随机数
+     *
      * @return
      */
-    public static int get5Math(){
-      return (int)((Math.random()*9+1)*100000);
+    public static int get5Math() {
+        return (int) ((Math.random() * 9 + 1) * 100000);
     }
 
 }

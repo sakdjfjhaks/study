@@ -8,11 +8,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
-*
-* 
-* @author wangkun
-* @date  2020-04-20
-*/
+ * @author wangkun
+ * @date 2020-04-20
+ */
 @RestController
 @RequestMapping("/student")
 
@@ -20,7 +18,6 @@ public class StudentController {
 
     @Resource
     private StudentService service;
-
 
 
     @PostMapping(value = "/getAll")

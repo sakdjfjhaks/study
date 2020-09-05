@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study.practice.springboot.entityclass.shop.ShopDao">
-     <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.shop.Shop">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.shop.Shop">
         <id column="shop_id" jdbcType="BIGINT" property="shopId"/>
         <result column="user_id" jdbcType="BIGINT" property="userId"/>
         <result column="sys_user_id" jdbcType="BIGINT" property="sysUserId"/>
@@ -35,22 +35,22 @@
         <result column="shop_bring_goods" jdbcType="INTEGER" property="shopBringGoods"/>
         <result column="shop_provide_channels" jdbcType="INTEGER" property="shopProvideChannels"/>
         <result column="shop_trademark_type" jdbcType="INTEGER" property="shopTrademarkType"/>
-        <result column="shop_trademark_classify" jdbcType="BIGINT" property="shopTrademarkClassify" />
-        <result column="exclusive" jdbcType="INTEGER" property="exclusive" />
-        <result column="shop_fits_description" jdbcType="DECIMAL" property="shopFitsDescription" />
-        <result column="shop_seller_service" jdbcType="DECIMAL" property="shopSellerService" />
-        <result column="shop_delivery_speed" jdbcType="DECIMAL" property="shopDeliverySpeed" />
-        <result column="old_or_new" jdbcType="INTEGER" property="oldOrNew" />
-        <result column="shop_fulfill_target" jdbcType="INTEGER" property="shopFulfillTarget" />
-        <result column="shop_second_hand" jdbcType="INTEGER" property="shopSecondHand" />
-        <result column="exclusive" jdbcType="INTEGER" property="exclusive" />
-         <result column="company_detail" jdbcType="VARCHAR" property="companyDetail" />
-        <result column="shop_fits_description_rate" jdbcType="INTEGER" property="shopFitsDescriptionRate" />
-        <result column="shop_seller_service_rate" jdbcType="INTEGER" property="shopSellerServiceRate" />
-        <result column="shop_delivery_speed_rate" jdbcType="INTEGER" property="shopDeliverySpeedRate" />
-         <result column="user_phone" jdbcType="BIGINT" property="userPhone" />
-         <result column="user_name" jdbcType="VARCHAR" property="userName" />
-         <result column="area" jdbcType="VARCHAR" property="area" />
+        <result column="shop_trademark_classify" jdbcType="BIGINT" property="shopTrademarkClassify"/>
+        <result column="exclusive" jdbcType="INTEGER" property="exclusive"/>
+        <result column="shop_fits_description" jdbcType="DECIMAL" property="shopFitsDescription"/>
+        <result column="shop_seller_service" jdbcType="DECIMAL" property="shopSellerService"/>
+        <result column="shop_delivery_speed" jdbcType="DECIMAL" property="shopDeliverySpeed"/>
+        <result column="old_or_new" jdbcType="INTEGER" property="oldOrNew"/>
+        <result column="shop_fulfill_target" jdbcType="INTEGER" property="shopFulfillTarget"/>
+        <result column="shop_second_hand" jdbcType="INTEGER" property="shopSecondHand"/>
+        <result column="exclusive" jdbcType="INTEGER" property="exclusive"/>
+        <result column="company_detail" jdbcType="VARCHAR" property="companyDetail"/>
+        <result column="shop_fits_description_rate" jdbcType="INTEGER" property="shopFitsDescriptionRate"/>
+        <result column="shop_seller_service_rate" jdbcType="INTEGER" property="shopSellerServiceRate"/>
+        <result column="shop_delivery_speed_rate" jdbcType="INTEGER" property="shopDeliverySpeedRate"/>
+        <result column="user_phone" jdbcType="BIGINT" property="userPhone"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
     </resultMap>
 
     <!--添加-->

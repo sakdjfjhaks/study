@@ -18,7 +18,7 @@ public class PasswordUtil {
     /**
      * 内容加密
      */
-    public static String encrypt(String data, String key, String iv) throws Exception{
+    public static String encrypt(String data, String key, String iv) throws Exception {
         //"算法/模式/补码方式"NoPadding PkcsPadding
         Cipher cipher = Cipher.getInstance("AES/CBC/NoPadding");
         int blockSize = cipher.getBlockSize();
