@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.answer.AnswerDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.answer.Answer">
+        <id property="answerId" column="answer_id" jdbcType="BIGINT"/>
+        <result property="askId" column="ask_id" jdbcType="BIGINT"/>
+        <result property="customerId" column="customer_id" jdbcType="BIGINT"/>
+        <result property="customerNickName" column="customer_nick_name" jdbcType="VARCHAR"/>
+        <result property="customerAvatar" column="customer_avatar" jdbcType="VARCHAR"/>
+        <result property="customerSign" column="customer_sign" jdbcType="VARCHAR"/>
+        <result property="answerContent" column="answer_content" jdbcType="VARCHAR"/>
+        <result property="creator" column="creator" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
+        <result property="modifyor" column="modifyor" jdbcType="BIGINT"/>
+        <result property="deleteState" column="delete_state" jdbcType="INTEGER"/>
+    </resultMap>
+    <!--获取全部-->
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            answer_id,
+            ask_id,
+            customer_id,
+            customer_nick_name,
+            customer_avatar,
+            customer_sign,
+            answer_content,
+            creator,
+            create_time,
+            modify_time,
+            modifyor,
+            delete_state
+        from answer
+        <if test="orderField != null and orderType != null">
+            order by ${orderField} ${orderType}
+        </if>
+        <if test="orderField != null and orderType = null">
+            order by ${orderField}
+        </if>
+    </select>
+    <!--分页查询-->
+    <select id="pages" resultMap="BaseResultMap">
+        select
+        answer_id,
+        ask_id,
+        customer_id,
+        customer_nick_name,
+        customer_avatar,
+        customer_sign,
+        answer_content,
+        creator,
+        create_time,
+        modify_time,
+        modifyor,
+        delete_state
+        from answer
+        <where>
+            <if test="customerId != null ">
+                and customer_id = #{customerId}
+            </if>
+            <if test="customerNickName != null and customerNickName !='' ">
+                and customer_nick_name = #{customerNickName}
+            </if>
+            <if test="customerAvatar != null and customerAvatar !='' ">
+                and customer_avatar = #{customerAvatar}
+            </if>
+            <if test="askId != null  ">
+                and ask_id = #{askId}
+            </if>
+        </where>
+        <if test="orderField != null and orderType != null">
+            order by ${orderField} ${orderType}
+        </if>
+        <if test="orderField != null and orderType = null">
+            order by ${orderField}
+        </if>
+    </select>
+    <!--添加-->
+    <insert id="add">
+        insert into answer (
+            answer_id,
+                    ask_id,
+                    customer_id,
+                    customer_nick_name,
+                    customer_avatar,
+                    customer_sign,
+                    answer_content,
+                    creator,
+                    create_time,
+                    modify_time,
+                    modifyor,
+                    delete_state
+         )values (
+            #{answerId},
+                    #{askId},
+                    #{customerId},
+                    #{customerNickName},
+                    #{customerAvatar},
+                    #{customerSign},
+                    #{answerContent},
+                    #{creator},
+                    #{createTime},
+                    #{modifyTime},
+                    #{modifyor},
+                    #{deleteState}
+        )
+    </insert>
+    <!--修改-->
+    <update id="update">
+        update answer
+        <set>
+            <if test="askId != null and askId !='' ">
+                ask_id = #{askId},
+            </if>
+            <if test="customerId != null and customerId !='' ">
+                customer_id = #{customerId},
+            </if>
+            <if test="customerNickName != null and customerNickName !='' ">
+                customer_nick_name = #{customerNickName},
+            </if>
+            <if test="customerAvatar != null and customerAvatar !='' ">
+                customer_avatar = #{customerAvatar},
+            </if>
+            <if test="customerSign != null and customerSign !='' ">
+                customer_sign = #{customerSign},
+            </if>
+            <if test="answerContent != null and answerContent !='' ">
+                answer_content = #{answerContent},
+            </if>
+            <if test="creator != null and creator !='' ">
+                creator = #{creator},
+            </if>
+            <if test="createTime != null ">
+                create_time = #{createTime},
+            </if>
+            <if test="modifyTime != null ">
+                modify_time = #{modifyTime},
+            </if>
+            <if test="modifyor != null and modifyor !='' ">
+                modifyor = #{modifyor},
+            </if>
+            <if test="deleteState != null ">
+                delete_state = #{deleteState}
+            </if>
+        </set>
+        where answer_id= #{answerId}
+    </update>
+    <!--详情-->
+    <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+            answer_id,
+            ask_id,
+            customer_id,
+            customer_nick_name,
+            customer_avatar,
+            customer_sign,
+            answer_content,
+            creator,
+            create_time,
+            modify_time,
+            modifyor,
+            delete_state
+        from answer
+        where answer_id= #{answerId} 
+    </select>
+    <!--删除-->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from answer where answer_id= #{answerId} 
+    </delete>
+
+</mapper>
