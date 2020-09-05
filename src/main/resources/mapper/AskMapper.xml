@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.ask.AskDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.ask.Ask">
+        <id property="askId" column="ask_id" jdbcType="BIGINT"/>
+        <result property="customerId" column="customer_id" jdbcType="BIGINT"/>
+        <result property="customerNickName" column="customer_nick_name" jdbcType="VARCHAR"/>
+        <result property="customerAvatar" column="customer_avatar" jdbcType="VARCHAR"/>
+        <result property="customerSign" column="customer_sign" jdbcType="VARCHAR"/>
+        <result property="askContent" column="ask_content" jdbcType="VARCHAR"/>
+        <result property="momentsLat" column="moments_lat" jdbcType="DECIMAL"/>
+        <result property="momentsLng" column="moments_lng" jdbcType="DECIMAL"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="shortContent" column="short_content" jdbcType="VARCHAR"/>
+        <result property="shortPicture" column="short_picture" jdbcType="VARCHAR"/>
+        <result property="likeNum" column="like_num" jdbcType="INTEGER"/>
+        <result property="visitNum" column="visit_num" jdbcType="INTEGER"/>
+        <result property="answerNum" column="answer_num" jdbcType="INTEGER"/>
+        <result property="creator" column="creator" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
+        <result property="modifyor" column="modifyor" jdbcType="BIGINT"/>
+        <result property="deleteState" column="delete_state" jdbcType="INTEGER"/>
+    </resultMap>
+    <!--获取全部-->
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            ask_id,
+            customer_id,
+            customer_nick_name,
+            customer_avatar,
+            customer_sign,
+            ask_content,
+            moments_lat,
+            moments_lng,
+            address,
+            short_content,
+            short_picture,
+            like_num,
+            visit_num,
+            answer_num,
+            creator,
+            create_time,
+            modify_time,
+            modifyor,
+            delete_state
+        from ask where create_time="2020-08-06 11:37:21"
+    </select>
+    <!--分页查询-->
+    <select id="pages" resultMap="BaseResultMap">
+        select
+            ask_id,
+            customer_id,
+            customer_nick_name,
+            customer_avatar,
+            customer_sign,
+            ask_content,
+            moments_lat,
+            moments_lng,
+            address,
+            short_content,
+            short_picture,
+            like_num,
+            visit_num,
+            answer_num,
+            creator,
+            create_time,
+            modify_time,
+            modifyor,
+            delete_state
+        from ask
+        <where>
+                        <if test="customerId != null and customerId !='' ">
+                            and customer_id = #{customerId}
+                        </if>
+                        <if test="customerNickName != null and customerNickName !='' ">
+                            and customer_nick_name = #{customerNickName}
+                        </if>
+                        <if test="customerAvatar != null and customerAvatar !='' ">
+                            and customer_avatar = #{customerAvatar}
+                        </if>
+                        <if test="customerSign != null and customerSign !='' ">
+                            and customer_sign = #{customerSign}
+                        </if>
+                        <if test="askContent != null and askContent !='' ">
+                            and ask_content = #{askContent}
+                        </if>
+                        <if test="momentsLat != null ">
+                            and moments_lat = #{momentsLat}
+                        </if>
+                        <if test="momentsLng != null ">
+                            and moments_lng = #{momentsLng}
+                        </if>
+                        <if test="address != null and address !='' ">
+                            and address = #{address}
+                        </if>
+                        <if test="shortContent != null and shortContent !='' ">
+                            and short_content = #{shortContent}
+                        </if>
+                        <if test="shortPicture != null and shortPicture !='' ">
+                            and short_picture = #{shortPicture}
+                        </if>
+                        <if test="likeNum != null ">
+                            and like_num = #{likeNum}
+                        </if>
+                        <if test="visitNum != null ">
+                            and visit_num = #{visitNum}
+                        </if>
+                        <if test="answerNum != null ">
+                            and answer_num = #{answerNum}
+                        </if>
+                        <if test="creator != null and creator !='' ">
+                            and creator = #{creator}
+                        </if>
+                        <if test="createTime != null ">
+                            and create_time = #{createTime}
+                        </if>
+                        <if test="modifyTime != null ">
+                            and modify_time = #{modifyTime}
+                        </if>
+                        <if test="modifyor != null and modifyor !='' ">
+                            and modifyor = #{modifyor}
+                        </if>
+                        <if test="deleteState != null ">
+                            and delete_state = #{deleteState}
+                        </if>
+        </where>
+        <if test="orderField != null and orderType != null">
+            order by ${orderField} ${orderType}
+        </if>
+        <if test="orderField != null and orderType = null">
+            order by ${orderField}
+        </if>
+    </select>
+    <!--添加-->
+    <insert id="add">
+        insert into ask (
+            ask_id,
+                    customer_id,
+                    customer_nick_name,
+                    customer_avatar,
+                    customer_sign,
+                    ask_content,
+                    moments_lat,
+                    moments_lng,
+                    address,
+                    short_content,
+                    short_picture,
+                    like_num,
+                    visit_num,
+                    answer_num,
+                    creator,
+                    create_time,
+                    modify_time,
+                    modifyor,
+                    delete_state
+         )values (
+            #{askId},
+                    #{customerId},
+                    #{customerNickName},
+                    #{customerAvatar},
+                    #{customerSign},
+                    #{askContent},
+                    #{momentsLat},
+                    #{momentsLng},
+                    #{address},
+                    #{shortContent},
+                    #{shortPicture},
+                    #{likeNum},
+                    #{visitNum},
+                    #{answerNum},
+                    #{creator},
+                    #{createTime},
+                    #{modifyTime},
+                    #{modifyor},
+                    #{deleteState}
+        )
+    </insert>
+    <!--修改-->
+    <update id="update" >
+        update ask
+        <set>
+           <if test="customerId != null and customerId !='' ">
+              customer_id = #{customerId},
+           </if>
+           <if test="customerNickName != null and customerNickName !='' ">
+              customer_nick_name = #{customerNickName},
+           </if>
+           <if test="customerAvatar != null and customerAvatar !='' ">
+              customer_avatar = #{customerAvatar},
+           </if>
+           <if test="customerSign != null and customerSign !='' ">
+              customer_sign = #{customerSign},
+           </if>
+           <if test="askContent != null and askContent !='' ">
+              ask_content = #{askContent},
+           </if>
+            <if test="momentsLat != null ">
+                moments_lat = #{momentsLat},
+            </if>
+            <if test="momentsLng != null ">
+                moments_lng = #{momentsLng},
+            </if>
+           <if test="address != null and address !='' ">
+              address = #{address},
+           </if>
+           <if test="shortContent != null and shortContent !='' ">
+              short_content = #{shortContent},
+           </if>
+           <if test="shortPicture != null and shortPicture !='' ">
+              short_picture = #{shortPicture},
+           </if>
+           <if test="likeNum != null ">
+              like_num = #{likeNum},
+           </if>
+           <if test="visitNum != null ">
+              visit_num = #{visitNum},
+           </if>
+           <if test="answerNum != null ">
+              answer_num = #{answerNum},
+           </if>
+           <if test="creator != null and creator !='' ">
+              creator = #{creator},
+           </if>
+           <if test="createTime != null ">
+              create_time = #{createTime},
+           </if>
+           <if test="modifyTime != null ">
+              modify_time = #{modifyTime},
+           </if>
+           <if test="modifyor != null and modifyor !='' ">
+              modifyor = #{modifyor},
+           </if>
+           <if test="deleteState != null ">
+              delete_state = #{deleteState}
+           </if>
+        </set>
+        where ask_id= #{askId} 
+    </update>
+    <!--详情-->
+    <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+            ask_id,
+            customer_id,
+            customer_nick_name,
+            customer_avatar,
+            customer_sign,
+            ask_content,
+            moments_lat,
+            moments_lng,
+            address,
+            short_content,
+            short_picture,
+            like_num,
+            visit_num,
+            answer_num,
+            creator,
+            create_time,
+            modify_time,
+            modifyor,
+            delete_state
+        from ask
+        <where>
+            <if test="deleteState != null ">
+                and delete_state = #{deleteState}
+            </if>
+            <if test="askId != null ">
+                and ask_id= #{askId}
+            </if>
+        </where>
+    </select>
+    <!--删除-->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from ask where ask_id= #{askId}
+    </delete>
+    <!-- 回答量+1 -->
+    <update id="updateAnswerNum">
+        update ask set answer_num = answer_num + #{answerNum} where ask_id= #{askId}
+    </update>
+    <!-- 回答量+1 -->
+    <update id="updatVisitNum">
+        update ask set visit_num = visit_num + #{visitNum} where ask_id= #{askId}
+    </update>
+</mapper>

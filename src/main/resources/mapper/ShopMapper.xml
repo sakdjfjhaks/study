@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.shop.ShopDao">
+     <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.shop.Shop">
+        <id column="shop_id" jdbcType="BIGINT" property="shopId"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="sys_user_id" jdbcType="BIGINT" property="sysUserId"/>
+        <result column="shop_type" jdbcType="INTEGER" property="shopType"/>
+        <result column="shop_title" jdbcType="VARCHAR" property="shopTitle"/>
+        <result column="shop_description" jdbcType="VARCHAR" property="shopDescription"/>
+        <result column="shop_url" jdbcType="VARCHAR" property="shopUrl"/>
+        <result column="shop_name" jdbcType="VARCHAR" property="shopName"/>
+        <result column="shop_price" jdbcType="DECIMAL" property="shopPrice"/>
+        <result column="shop_technical_fee" jdbcType="DECIMAL" property="shopTechnicalFee"/>
+        <result column="shop_sale_bond" jdbcType="DECIMAL" property="shopSaleBond"/>
+        <result column="shop_general_deduct_points" jdbcType="DECIMAL" property="shopGeneralDeductPoints"/>
+        <result column="shop_serious_deduct_points" jdbcType="DECIMAL" property="shopSeriousDeductPoints"/>
+        <result column="shop_fake_deduct_points" jdbcType="DECIMAL" property="shopFakeDeductPoints"/>
+        <result column="shop_certificate" jdbcType="INTEGER" property="shopCertificate"/>
+        <result column="provide_identity_card" jdbcType="INTEGER" property="provideIdentityCard"/>
+        <result column="provide_personal_photo" jdbcType="INTEGER" property="providePersonalPhoto"/>
+        <result column="provide_hand_identity_card" jdbcType="INTEGER" property="provideHandIdentityCard"/>
+        <result column="provide_household_register" jdbcType="INTEGER" property="provideHouseholdRegister"/>
+        <result column="shop_state" jdbcType="INTEGER" property="shopState"/>
+        <result column="creator" jdbcType="BIGINT" property="creator"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime"/>
+        <result column="modifyor" jdbcType="BIGINT" property="modifyor"/>
+        <result column="shop_classify" jdbcType="INTEGER" property="shopClassify"/>
+        <result column="shop_area" jdbcType="INTEGER" property="shopArea"/>
+        <result column="shop_category" jdbcType="INTEGER" property="shopCategory"/>
+        <result column="shop_level" jdbcType="INTEGER" property="shopLevel"/>
+        <result column="shop_classify" jdbcType="INTEGER" property="shopClassify"/>
+        <result column="taxpayer_type" jdbcType="INTEGER" property="taxpayerType"/>
+        <result column="shop_bring_goods" jdbcType="INTEGER" property="shopBringGoods"/>
+        <result column="shop_provide_channels" jdbcType="INTEGER" property="shopProvideChannels"/>
+        <result column="shop_trademark_type" jdbcType="INTEGER" property="shopTrademarkType"/>
+        <result column="shop_trademark_classify" jdbcType="BIGINT" property="shopTrademarkClassify" />
+        <result column="exclusive" jdbcType="INTEGER" property="exclusive" />
+        <result column="shop_fits_description" jdbcType="DECIMAL" property="shopFitsDescription" />
+        <result column="shop_seller_service" jdbcType="DECIMAL" property="shopSellerService" />
+        <result column="shop_delivery_speed" jdbcType="DECIMAL" property="shopDeliverySpeed" />
+        <result column="old_or_new" jdbcType="INTEGER" property="oldOrNew" />
+        <result column="shop_fulfill_target" jdbcType="INTEGER" property="shopFulfillTarget" />
+        <result column="shop_second_hand" jdbcType="INTEGER" property="shopSecondHand" />
+        <result column="exclusive" jdbcType="INTEGER" property="exclusive" />
+         <result column="company_detail" jdbcType="VARCHAR" property="companyDetail" />
+        <result column="shop_fits_description_rate" jdbcType="INTEGER" property="shopFitsDescriptionRate" />
+        <result column="shop_seller_service_rate" jdbcType="INTEGER" property="shopSellerServiceRate" />
+        <result column="shop_delivery_speed_rate" jdbcType="INTEGER" property="shopDeliverySpeedRate" />
+         <result column="user_phone" jdbcType="BIGINT" property="userPhone" />
+         <result column="user_name" jdbcType="VARCHAR" property="userName" />
+         <result column="area" jdbcType="VARCHAR" property="area" />
+    </resultMap>
+
+    <!--添加-->
+    <insert id="add" parameterType="com.study.practice.springboot.entityclass.shop.Shop">
+        insert into shop (
+        shop_id,
+            user_id,
+            sys_user_id,
+            shop_type,
+            shop_title,
+            shop_description,
+            shop_url,
+            shop_name,
+            shop_price,
+            shop_technical_fee,
+            shop_sale_bond,
+            shop_general_deduct_points,
+            shop_serious_deduct_points,
+            shop_fake_deduct_points,
+            shop_certificate,
+            provide_identity_card,
+            provide_personal_photo,
+            provide_hand_identity_card,
+            provide_household_register,
+            shop_state,
+            creator,
+            create_time,
+            modify_time,
+            modifyor
+        )values (
+        #{shopId,jdbcType=BIGINT},
+            #{userId,jdbcType=BIGINT},
+            #{sysUserId,jdbcType=BIGINT},
+            #{shopType,jdbcType=INTEGER},
+            #{shopTitle,jdbcType=VARCHAR},
+            #{shopDescription,jdbcType=VARCHAR},
+            #{shopUrl,jdbcType=VARCHAR},
+            #{shopName,jdbcType=VARCHAR},
+            #{shopPrice,jdbcType=DECIMAL},
+            #{shopTechnicalFee,jdbcType=DECIMAL},
+            #{shopSaleBond,jdbcType=DECIMAL},
+            #{shopGeneralDeductPoints,jdbcType=DECIMAL},
+            #{shopSeriousDeductPoints,jdbcType=DECIMAL},
+            #{shopFakeDeductPoints,jdbcType=DECIMAL},
+            #{shopCertificate,jdbcType=INTEGER},
+            #{provideIdentityCard,jdbcType=INTEGER},
+            #{providePersonalPhoto,jdbcType=INTEGER},
+            #{provideHandIdentityCard,jdbcType=INTEGER},
+            #{provideHouseholdRegister,jdbcType=INTEGER},
+            #{shopState,jdbcType=INTEGER},
+            #{creator,jdbcType=BIGINT},
+            #{createTime,jdbcType=TIMESTAMP},
+            #{modifyTime,jdbcType=TIMESTAMP},
+            #{modifyor,jdbcType=BIGINT}
+    )
+    </insert>
+
+</mapper>
