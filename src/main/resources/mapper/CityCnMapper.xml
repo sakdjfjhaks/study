@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.citycn.CityCnDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.citycn.CityCn">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="country" jdbcType="VARCHAR" property="country"/>
+        <result column="state" jdbcType="VARCHAR" property="state"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="city_name" jdbcType="VARCHAR" property="cityName"/>
+        <result column="state_code" jdbcType="VARCHAR" property="stateCode"/>
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>
+        <result column="country_code" jdbcType="VARCHAR" property="countryCode"/>
+    </resultMap>
+    <!--获取全部-->
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            id,
+            country,
+            state,
+            city,
+            city_name,
+            state_code,
+            city_code,
+            country_code
+        from city_cn
+    </select>
+    <!--分页查询-->
+    <select id="pages" resultMap="BaseResultMap">
+        select
+            id,
+            country,
+            state,
+            city,
+            city_name,
+            state_code,
+            city_code,
+            country_code
+        from city_cn
+        order by id desc
+    </select>
+    <!--添加-->
+    <insert id="add">
+        insert into city_cn (
+            id,
+                    country,
+                    state,
+                    city,
+                    city_name,
+                    state_code,
+                    city_code,
+                    country_code
+         )values (
+            #{id,jdbcType=INTEGER},
+                    #{country,jdbcType=VARCHAR},
+                    #{state,jdbcType=VARCHAR},
+                    #{city,jdbcType=VARCHAR},
+                    #{cityName,jdbcType=VARCHAR},
+                    #{stateCode,jdbcType=VARCHAR},
+                    #{cityCode,jdbcType=VARCHAR},
+                    #{countryCode,jdbcType=VARCHAR}
+        )
+    </insert>
+    <!--修改-->
+    <update id="update">
+        update city_cn
+        <set>
+           <if test="country != null and country !='' ">
+              country = #{country,jdbcType=VARCHAR},
+           </if>
+           <if test="state != null and state !='' ">
+              state = #{state,jdbcType=VARCHAR},
+           </if>
+           <if test="city != null and city !='' ">
+              city = #{city,jdbcType=VARCHAR},
+           </if>
+           <if test="cityName != null and cityName !='' ">
+              city_name = #{cityName,jdbcType=VARCHAR},
+           </if>
+           <if test="stateCode != null and stateCode !='' ">
+              state_code = #{stateCode,jdbcType=VARCHAR},
+           </if>
+           <if test="cityCode != null and cityCode !='' ">
+              city_code = #{cityCode,jdbcType=VARCHAR},
+           </if>
+           <if test="countryCode != null and countryCode !='' ">
+              country_code = #{countryCode,jdbcType=VARCHAR}
+           </if>
+        </set>
+        where id= #{id,jdbcType=INTEGER}
+    </update>
+    <!--详情-->
+    <select id="getById" resultMap="BaseResultMap">
+        select
+            id,
+            country,
+            state,
+            city,
+            city_name,
+            state_code,
+            city_code,
+            country_code
+        from city_cn
+        where id= #{id,jdbcType=INTEGER}
+    </select>
+    <!--删除-->
+    <delete id="delById" >
+        delete from city_cn where id= #{id,jdbcType=INTEGER}
+    </delete>
+</mapper>

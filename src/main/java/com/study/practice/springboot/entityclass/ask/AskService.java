@@ -25,7 +25,7 @@ public class AskService {
      * @return 对象列表
      */
     public void addNumAsk(Integer num) {
-        if(num<=0){
+        if (num <= 0) {
             return;
         }
         Ask ask = new Ask();
@@ -34,20 +34,22 @@ public class AskService {
             this.add(ask);
         }
     }
+
     public void addNumAskContent(Integer num) {
-        if(num<=0){
+        if (num <= 0) {
             return;
         }
         Integer length = ContentConstant.CONTENT_CONSTANT.length;
         Ask ask = new Ask();
         for (int i = 0; i < num; i++) {
-            for(String content:ContentConstant.CONTENT_CONSTANT){
-                ask.setAskContent( i +content);
+            for (String content : ContentConstant.CONTENT_CONSTANT) {
+                ask.setAskContent(i + content);
                 this.add(ask);
             }
 
         }
     }
+
     public Ask add(Ask ask) {
         ask.setAskId(SnowFlakeId.generateID());
         ask.setCreateTime(Calendar.getInstance().getTime());

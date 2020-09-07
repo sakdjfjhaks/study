@@ -1,21 +1,17 @@
 package com.study.practice.springboot.entityclass.answer;
 
 
-import com.study.practice.springboot.entityclass.ask.Ask;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.Calendar;
-import java.util.List;
 
 
 /**
-* 回答(Answer)表服务实现类
-*
-* @author zhangkui
-* @date  2020-03-17
-*/
+ * 回答(Answer)表服务实现类
+ *
+ * @author zhangkui
+ * @date 2020-03-17
+ */
 @Service
 public class AnswerService {
 
@@ -28,12 +24,12 @@ public class AnswerService {
      * @return 对象列表
      */
 
-    public void addNumAnswer(){
+    public void addNumAnswer() {
         Answer answer = new Answer();
-            for(int i=0;i<2000000;i++){
-                answer.setAnswerContent("2020,13,38,"+i+",回答测试");
-                dao.add(answer);
-            }
+        for (int i = 0; i < 2000000; i++) {
+            answer.setAnswerContent("2020,13,38," + i + ",回答测试");
+            dao.add(answer);
+        }
     }
 
 }

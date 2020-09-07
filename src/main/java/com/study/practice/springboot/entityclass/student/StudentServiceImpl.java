@@ -17,7 +17,6 @@ public class StudentServiceImpl implements StudentService {
     @Resource
     private StudentDao dao;
 
-    @Override
     public List<Student> getAll() {
         return this.dao.getAll();
     }

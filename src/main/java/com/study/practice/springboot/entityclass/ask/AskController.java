@@ -3,7 +3,6 @@ package com.study.practice.springboot.entityclass.ask;
 import com.study.practice.base.model.BaseResponse;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
