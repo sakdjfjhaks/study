@@ -5,7 +5,7 @@
         <id column="city_id" jdbcType="BIGINT" property="cityId"/>
         <result column="city_name" jdbcType="VARCHAR" property="cityName"/>
         <result column="city_lat" jdbcType="DECIMAL" property="cityLat"/>
-        <result column="city_lng" jdbcType="DECIMAL" property="cityLon"/>
+        <result column="city_lon" jdbcType="DECIMAL" property="cityLon"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
     <!--获取全部-->
@@ -14,7 +14,7 @@
             city_id,
             city_name,
             city_lat,
-            city_lng,
+            city_lon,
             create_time
         from city_coordinate
     </select>
@@ -24,7 +24,7 @@
             city_id,
             city_name,
             city_lat,
-            city_lng,
+            city_lon,
             create_time
         from city_coordinate
         order by city_id desc
@@ -35,7 +35,7 @@
             city_id,
                     city_name,
                     city_lat,
-                    city_lng,
+                    city_lon,
                     create_time
          )values (
             #{cityId,jdbcType=BIGINT},
@@ -56,7 +56,7 @@
                 city_lat = #{cityLat,jdbcType=DECIMAL},
             </if>
             <if test="cityLon != null ">
-                city_lng = #{cityLon,jdbcType=DECIMAL},
+                city_lon = #{cityLon,jdbcType=DECIMAL},
             </if>
             <if test="createTime != null ">
                 create_time = #{createTime,jdbcType=TIMESTAMP}
@@ -70,7 +70,7 @@
             city_id,
             city_name,
             city_lat,
-            city_lng,
+            city_lon,
             create_time
         from city_coordinate
         where city_id= #{cityId,jdbcType=BIGINT} 

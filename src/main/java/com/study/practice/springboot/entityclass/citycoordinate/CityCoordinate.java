@@ -43,7 +43,7 @@ public class CityCoordinate {
         return cityLon;
     }
 
-    public void setcityLon(BigDecimal cityLon) {
+    public void setCityLon(BigDecimal cityLon) {
         this.cityLon = cityLon;
     }
 

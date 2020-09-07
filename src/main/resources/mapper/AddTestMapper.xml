@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.addtest.AddTestDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.addtest.AddTest">
+        <id column="add_test_id" jdbcType="BIGINT" property="addTestId"/>
+        <result column="add_test_name" jdbcType="VARCHAR" property="addTestName"/>
+        <result column="add_test_lat" jdbcType="DECIMAL" property="addTestLat"/>
+        <result column="add_test_lon" jdbcType="DECIMAL" property="addTestLon"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+    <!--获取全部-->
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            add_test_id,
+            add_test_name,
+            add_test_lat,
+            add_test_lon,
+            create_time
+        from add_test
+    </select>
+    <!--分页查询-->
+    <select id="pages" resultMap="BaseResultMap">
+        select
+            add_test_id,
+            add_test_name,
+            add_test_lat,
+            add_test_lon,
+            create_time
+        from add_test
+        order by add_test_id desc
+    </select>
+    <!--添加-->
+    <insert id="add" parameterType="com.study.practice.springboot.entityclass.addtest.AddTest">
+        insert into add_test (
+        add_test_id,
+        add_test_name,
+        add_test_lat,
+        add_test_lon,
+        create_time
+        )values
+        (
+            #{addTestId,jdbcType=BIGINT},
+                    #{addTestName,jdbcType=VARCHAR},
+                    #{addTestLat,jdbcType=DECIMAL},
+                    #{addTestLon,jdbcType=DECIMAL},
+                    #{createTime,jdbcType=TIMESTAMP}
+        )
+
+    </insert>
+    <insert id="addList" parameterType="java.util.List">
+        insert into add_test (
+            add_test_id,
+                    add_test_name,
+                    add_test_lat,
+                    add_test_lon,
+                    create_time
+         )values
+
+        <foreach collection="list" item="item" index="index" separator=",">
+
+            (
+            #{item.addTestId,jdbcType=BIGINT},
+            #{item.addTestName,jdbcType=VARCHAR},
+            #{item.addTestLat,jdbcType=DECIMAL},
+            #{item.addTestLon,jdbcType=DECIMAL},
+            #{item.createTime,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+    <!--修改-->
+    <update id="update" parameterType="com.study.practice.springboot.entityclass.addtest.AddTest">
+        update add_test
+        <set>
+            <if test="addTestName != null and addTestName !='' ">
+                add_test_name = #{addTestName,jdbcType=VARCHAR},
+            </if>
+            <if test="addTestLat != null ">
+                add_test_lat = #{addTestLat,jdbcType=DECIMAL},
+            </if>
+            <if test="addTestLon != null ">
+                add_test_lon = #{addTestLon,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null ">
+                create_time = #{createTime,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        where add_test_id= #{addTestId,jdbcType=BIGINT}
+    </update>
+    <!--详情-->
+    <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+            add_test_id,
+            add_test_name,
+            add_test_lat,
+            add_test_lon,
+            create_time
+        from add_test
+        where add_test_id= #{addTestId,jdbcType=BIGINT} 
+    </select>
+    <!--删除-->
+    <delete id="delById" parameterType="java.lang.Long">
+        delete from add_test where add_test_id= #{addTestId,jdbcType=BIGINT} 
+    </delete>
+</mapper>
