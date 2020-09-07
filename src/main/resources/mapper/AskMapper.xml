@@ -176,6 +176,54 @@
                     #{deleteState}
         )
     </insert>
+
+    <!--添加-->
+    <insert id="addAskList" parameterType="java.util.List">
+        insert into ask (
+            ask_id,
+                    customer_id,
+                    customer_nick_name,
+                    customer_avatar,
+                    customer_sign,
+                    ask_content,
+                    moments_lat,
+                    moments_lng,
+                    address,
+                    short_content,
+                    short_picture,
+                    like_num,
+                    visit_num,
+                    answer_num,
+                    creator,
+                    create_time,
+                    modify_time,
+                    modifyor,
+                    delete_state
+         )values
+        <foreach collection="list" item="item" index="index" separator=",">
+         (
+            #{item.askId},
+                    #{item.customerId},
+                    #{item.customerNickName},
+                    #{item.customerAvatar},
+                    #{item.customerSign},
+                    #{item.askContent},
+                    #{item.momentsLat},
+                    #{item.momentsLng},
+                    #{item.address},
+                    #{item.shortContent},
+                    #{item.shortPicture},
+                    #{item.likeNum},
+                    #{item.visitNum},
+                    #{item.answerNum},
+                    #{item.creator},
+                    #{item.createTime},
+                    #{item.modifyTime},
+                    #{item.modifyor},
+                    #{item.deleteState}
+        )
+        </foreach>
+    </insert>
     <!--修改-->
     <update id="update">
         update ask

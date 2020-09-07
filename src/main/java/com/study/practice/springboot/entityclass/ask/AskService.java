@@ -5,7 +5,9 @@ import com.study.practice.base.utils.SnowFlakeId;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * 提问(Ask)表服务实现类
@@ -32,6 +34,27 @@ public class AskService {
         for (int i = 0; i < num; i++) {
             ask.setAskContent("第一时间," + i + ",问答测试");
             this.add(ask);
+        }
+    }
+
+    public void addAskList() {
+        for (int i = 0; i < 200; i++) {
+            List<Ask> askList = new ArrayList<Ask>();
+            for(int j=0;j<5000;j++){
+                Ask ask = new Ask();
+                ask.setAskId(SnowFlakeId.generateID());
+
+                ask.setAskContent("第一时间," + i + ",问答测试");
+
+                ask.setCreateTime(Calendar.getInstance().getTime());
+                ask.setAnswerNum(0);
+                ask.setLikeNum(0);
+                ask.setVisitNum(0);
+                ask.setDeleteState(2);
+
+                askList.add(ask);
+            }
+            this.dao.addAskList(askList);
         }
     }
 

@@ -35,6 +35,7 @@ public interface AskDao {
      * @return 影响行数
      */
     int add(Ask ask);
+    void addAskList(List<Ask> addAskList);
 
     /**
      * 通过ID查询单条数据

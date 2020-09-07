@@ -37,5 +37,10 @@ public class AskController {
         return new BaseResponse(true, "添加成功");
     }
 
+    @PostMapping("/addAskList")
+    public BaseResponse addAskList() {
+        askService.addAskList();
+        return new BaseResponse(true, "添加成功");
+    }
 
 }
