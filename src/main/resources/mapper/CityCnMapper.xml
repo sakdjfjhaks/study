@@ -64,27 +64,27 @@
     <update id="update">
         update city_cn
         <set>
-           <if test="country != null and country !='' ">
-              country = #{country,jdbcType=VARCHAR},
-           </if>
-           <if test="state != null and state !='' ">
-              state = #{state,jdbcType=VARCHAR},
-           </if>
-           <if test="city != null and city !='' ">
-              city = #{city,jdbcType=VARCHAR},
-           </if>
-           <if test="cityName != null and cityName !='' ">
-              city_name = #{cityName,jdbcType=VARCHAR},
-           </if>
-           <if test="stateCode != null and stateCode !='' ">
-              state_code = #{stateCode,jdbcType=VARCHAR},
-           </if>
-           <if test="cityCode != null and cityCode !='' ">
-              city_code = #{cityCode,jdbcType=VARCHAR},
-           </if>
-           <if test="countryCode != null and countryCode !='' ">
-              country_code = #{countryCode,jdbcType=VARCHAR}
-           </if>
+            <if test="country != null and country !='' ">
+                country = #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null and state !='' ">
+                state = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null and city !='' ">
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="cityName != null and cityName !='' ">
+                city_name = #{cityName,jdbcType=VARCHAR},
+            </if>
+            <if test="stateCode != null and stateCode !='' ">
+                state_code = #{stateCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cityCode != null and cityCode !='' ">
+                city_code = #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="countryCode != null and countryCode !='' ">
+                country_code = #{countryCode,jdbcType=VARCHAR}
+            </if>
         </set>
         where id= #{id,jdbcType=INTEGER}
     </update>
@@ -103,7 +103,7 @@
         where id= #{id,jdbcType=INTEGER}
     </select>
     <!--删除-->
-    <delete id="delById" >
+    <delete id="delById">
         delete from city_cn where id= #{id,jdbcType=INTEGER}
     </delete>
 </mapper>

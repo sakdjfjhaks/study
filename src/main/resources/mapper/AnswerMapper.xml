@@ -18,18 +18,18 @@
     <!--获取全部-->
     <select id="getAll" resultMap="BaseResultMap">
         select
-            answer_id,
-            ask_id,
-            customer_id,
-            customer_nick_name,
-            customer_avatar,
-            customer_sign,
-            answer_content,
-            creator,
-            create_time,
-            modify_time,
-            modifyor,
-            delete_state
+        answer_id,
+        ask_id,
+        customer_id,
+        customer_nick_name,
+        customer_avatar,
+        customer_sign,
+        answer_content,
+        creator,
+        create_time,
+        modify_time,
+        modifyor,
+        delete_state
         from answer
         <if test="orderField != null and orderType != null">
             order by ${orderField} ${orderType}

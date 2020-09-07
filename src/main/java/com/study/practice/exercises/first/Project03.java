@@ -21,10 +21,7 @@ public class Project03 {
         int tenDigitNumber = (int) Math.floor((num / 10) - (hundredDigitNumber * 10));
         int singleDigitNumber = num % 10;
         int sum = (int) Math.pow(hundredDigitNumber, 3) + (int) Math.pow(tenDigitNumber, 3) + (int) Math.pow(singleDigitNumber, 3);
-        if (sum == num) {
-            return true;
-        }
-        return false;
+        return sum == num;
     }
 
 

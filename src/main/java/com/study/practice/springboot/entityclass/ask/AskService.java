@@ -40,7 +40,7 @@ public class AskService {
     public void addAskList() {
         for (int i = 0; i < 200; i++) {
             List<Ask> askList = new ArrayList<Ask>();
-            for(int j=0;j<5000;j++){
+            for (int j = 0; j < 5000; j++) {
                 Ask ask = new Ask();
                 ask.setAskId(SnowFlakeId.generateID());
 

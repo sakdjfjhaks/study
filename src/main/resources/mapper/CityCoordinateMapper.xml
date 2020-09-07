@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinateDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+        <id column="city_id" jdbcType="BIGINT" property="cityId"/>
+        <result column="city_name" jdbcType="VARCHAR" property="cityName"/>
+        <result column="city_lat" jdbcType="DECIMAL" property="cityLat"/>
+        <result column="city_lng" jdbcType="DECIMAL" property="cityLon"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+    <!--获取全部-->
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            city_id,
+            city_name,
+            city_lat,
+            city_lng,
+            create_time
+        from city_coordinate
+    </select>
+    <!--分页查询-->
+    <select id="pages" resultMap="BaseResultMap">
+        select
+            city_id,
+            city_name,
+            city_lat,
+            city_lng,
+            create_time
+        from city_coordinate
+        order by city_id desc
+    </select>
+    <!--添加-->
+    <insert id="add" parameterType="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+        insert into city_coordinate (
+            city_id,
+                    city_name,
+                    city_lat,
+                    city_lng,
+                    create_time
+         )values (
+            #{cityId,jdbcType=BIGINT},
+                    #{cityName,jdbcType=VARCHAR},
+                    #{cityLat,jdbcType=DECIMAL},
+                    #{cityLon,jdbcType=DECIMAL},
+                    #{createTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <!--修改-->
+    <update id="update" parameterType="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+        update city_coordinate
+        <set>
+            <if test="cityName != null and cityName !='' ">
+                city_name = #{cityName,jdbcType=VARCHAR},
+            </if>
+            <if test="cityLat != null ">
+                city_lat = #{cityLat,jdbcType=DECIMAL},
+            </if>
+            <if test="cityLon != null ">
+                city_lng = #{cityLon,jdbcType=DECIMAL},
+            </if>
+            <if test="createTime != null ">
+                create_time = #{createTime,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        where city_id= #{cityId,jdbcType=BIGINT}
+    </update>
+    <!--详情-->
+    <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+            city_id,
+            city_name,
+            city_lat,
+            city_lng,
+            create_time
+        from city_coordinate
+        where city_id= #{cityId,jdbcType=BIGINT} 
+    </select>
+    <!--删除-->
+    <delete id="delById" parameterType="java.lang.Long">
+        delete from city_coordinate where city_id= #{cityId,jdbcType=BIGINT} 
+    </delete>
+</mapper>

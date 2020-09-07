@@ -26,8 +26,7 @@ public class ShopService {
     public Shop add(Shop shop) {
         shop.setShopId(SnowFlakeId.generateID());
         shop.setCreateTime(Calendar.getInstance().getTime());
-        dao.add(shop);
-        return shop;
+        return dao.add(shop);
     }
 
 }

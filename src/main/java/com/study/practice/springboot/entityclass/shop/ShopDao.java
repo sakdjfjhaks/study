@@ -11,6 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ShopDao {
 
 
-    Integer add(Shop shop);
+    Shop add(Shop shop);
 
 }
