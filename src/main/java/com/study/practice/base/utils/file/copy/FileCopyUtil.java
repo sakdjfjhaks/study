@@ -10,17 +10,11 @@ import java.io.IOException;
 
 public class FileCopyUtil {
 
-    public static void fileCopy(String inFilePath, String outFilePath) throws IOException {
-        File inFile = new File(inFilePath);
-        File outFile = new File(outFilePath);
-        FileUtils.copyFile(inFile, outFile);
-    }
     /**
      * 无限复制文件到磁盘存满
      * */
-    public static void fileCopyInfinite() {
+    public static void fileCopyInfinite(String inFilePath) {
         Long startTime=System.currentTimeMillis();   //获取开始时间
-        String inFilePath = FileEnum.IN_FILE_PATH.getFilePath();
         String inFileType = inFilePath.substring(inFilePath.lastIndexOf(".")+1);
         File inFile = new File(inFilePath);
         Boolean doBoolean = true;
@@ -33,15 +27,35 @@ public class FileCopyUtil {
                 doBoolean = false;
 
                 Long endTime=System.currentTimeMillis(); //获取结束时间
-                System.out.println("程序运行时间： "+(startTime-endTime)+"ms");
+                System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
                 System.out.println("存满报错");
             }
         }
     }
+    public static void deleteFolder(){
+        File file = new File(FileEnum.OUT_MIDER_PATH_2.getFilePath());
+        deleteFile(file);
+    }
+    /**
+     * 删除文件夹以及子文件
+     * */
+    public static void deleteFile(File file){
+        if(file.isDirectory()){
+            File[] files = file.listFiles();
+            for(File fileDelete:files){
+                if(fileDelete.isDirectory()){
+                    deleteFile(fileDelete);
+                }
+                fileDelete.delete();
+            }
+        }
+        file.delete();
+    }
 
     public static void main(String[] args) throws IOException {
 //        FileCopyUtil.fileCopy("F:\\测试文件\\test.mp4","F:\\file_copy_test\\1.mp4");
-        FileCopyUtil.fileCopyInfinite();
+//        FileCopyUtil.deleteFolder();
+        FileCopyUtil.fileCopyInfinite(FileEnum.IN_FILE_PATH.getFilePath());
     }
 
 }
