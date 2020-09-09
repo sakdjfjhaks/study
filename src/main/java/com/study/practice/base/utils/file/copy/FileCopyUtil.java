@@ -1,5 +1,6 @@
 package com.study.practice.base.utils.file.copy;
 
+import com.study.practice.base.paramter.constant.FilePathConstant;
 import com.study.practice.base.paramter.enums.file.FileEnum;
 import com.study.practice.base.utils.SnowFlakeId;
 import org.apache.commons.io.FileUtils;
@@ -38,6 +39,16 @@ public class FileCopyUtil {
     public static void deleteFolder(){
         File file = new File(FileEnum.OUT_MIDER_PATH_2.getFilePath());
         deleteFile(file);
+    }
+    /**
+     * 批量删除文件以及文件夹
+     * */
+    public static void deleteFolderAll(){
+        for(String filePath: FilePathConstant.FILE_PATHS_CONSTANT){
+            File file = new File(filePath);
+            deleteFile(file);
+        }
+
     }
     /**
      * 删除文件夹以及子文件
