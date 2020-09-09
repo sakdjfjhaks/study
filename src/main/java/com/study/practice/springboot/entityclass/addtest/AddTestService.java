@@ -63,10 +63,9 @@ public class AddTestService {
      * * @return 实例对象
      */
     @Transactional
-    public void addListmethod(CityCoordinate cityCoordinate) {
-
+    public void addListmethod(CityCoordinate cityCoordinate,int num) {
         List<AddTest> addTestList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < num; i++) {
             BigDecimal bigDecimalLat = cityCoordinate.getCityLat().add(new BigDecimal(0.0001 * i));
             BigDecimal bigDecimalLon = cityCoordinate.getCityLon().add(new BigDecimal(0.0001 * i));
             AddTest addTest = new AddTest();
@@ -79,7 +78,7 @@ public class AddTestService {
 
             addTestList.add(addTest);
         }
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < num; i++) {
 
             BigDecimal bigDecimalLat = cityCoordinate.getCityLat().subtract(new BigDecimal(0.0001 * i));
             BigDecimal bigDecimalLon = cityCoordinate.getCityLon().subtract(new BigDecimal(0.0001 * i));
@@ -94,7 +93,6 @@ public class AddTestService {
             addTestList.add(addTest);
         }
         this.dao.addList(addTestList);
-
     }
 
     /**
@@ -102,8 +100,9 @@ public class AddTestService {
      */
     public void addList() {
         List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
+        int num=500;
         for (CityCoordinate cityCoordinate : cityCoordinateList) {
-            this.addListmethod(cityCoordinate);
+            this.addListmethod(cityCoordinate,num);
         }
     }
 
@@ -161,7 +160,8 @@ public class AddTestService {
      */
     public void addListDisorder() {
         List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
-        for (int i = 0; i < 5; i++) {
+        int num=5000;
+        for (int i = 0; i < num; i++) {
             this.addListDisorderMethod(cityCoordinateList,i);
         }
     }
