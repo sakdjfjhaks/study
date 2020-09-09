@@ -19,6 +19,7 @@ public class FileCopyUtil {
      * 无限复制文件到磁盘存满
      * */
     public static void fileCopyInfinite() {
+        Long startTime=System.currentTimeMillis();   //获取开始时间
         String inFilePath = FileEnum.IN_FILE_PATH.getFilePath();
         String inFileType = inFilePath.substring(inFilePath.lastIndexOf(".")+1);
         File inFile = new File(inFilePath);
@@ -30,11 +31,12 @@ public class FileCopyUtil {
                 FileUtils.copyFile(inFile, outFile);
             } catch (IOException e) {
                 doBoolean = false;
+
+                Long endTime=System.currentTimeMillis(); //获取结束时间
+                System.out.println("程序运行时间： "+(startTime-endTime)+"ms");
                 System.out.println("存满报错");
             }
         }
-
-
     }
 
     public static void main(String[] args) throws IOException {
