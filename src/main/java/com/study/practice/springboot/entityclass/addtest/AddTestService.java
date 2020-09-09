@@ -4,6 +4,7 @@ import com.study.practice.base.utils.SnowFlakeId;
 import com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate;
 import com.study.practice.springboot.entityclass.citycoordinate.CityCoordinateService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -61,44 +62,109 @@ public class AddTestService {
      * 批量新增数据
      * * @return 实例对象
      */
-    public void addList() {
-        List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
-        for (CityCoordinate cityCoordinate : cityCoordinateList) {
-            List<AddTest> addTestList = new ArrayList<>();
-            for (int i = 0; i < 500; i++) {
+    @Transactional
+    public void addListmethod(CityCoordinate cityCoordinate) {
 
-                BigDecimal bigDecimalLat = cityCoordinate.getCityLat().add(new BigDecimal(0.0001 * i));
-                BigDecimal bigDecimalLon = cityCoordinate.getCityLon().add(new BigDecimal(0.0001 * i));
-                AddTest addTest = new AddTest();
+        List<AddTest> addTestList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            BigDecimal bigDecimalLat = cityCoordinate.getCityLat().add(new BigDecimal(0.0001 * i));
+            BigDecimal bigDecimalLon = cityCoordinate.getCityLon().add(new BigDecimal(0.0001 * i));
+            AddTest addTest = new AddTest();
 
-                addTest.setAddTestId(SnowFlakeId.generateID());
-                addTest.setAddTestName(cityCoordinate.getCityName() + i);
-                addTest.setAddTestLat(bigDecimalLat);
-                addTest.setAddTestLon(bigDecimalLon);
-                addTest.setCreateTime(Calendar.getInstance().getTime());
+            addTest.setAddTestId(SnowFlakeId.generateID());
+            addTest.setAddTestName(cityCoordinate.getCityName() + i);
+            addTest.setAddTestLat(bigDecimalLat);
+            addTest.setAddTestLon(bigDecimalLon);
+            addTest.setCreateTime(Calendar.getInstance().getTime());
 
-                addTestList.add(addTest);
-            }
-            for (int i = 0; i < 500; i++) {
-
-                BigDecimal bigDecimalLat = cityCoordinate.getCityLat().subtract(new BigDecimal(0.0001 * i));
-                BigDecimal bigDecimalLon = cityCoordinate.getCityLon().subtract(new BigDecimal(0.0001 * i));
-                AddTest addTest = new AddTest();
-
-                addTest.setAddTestId(SnowFlakeId.generateID());
-                addTest.setAddTestName(cityCoordinate.getCityName() + i);
-                addTest.setAddTestLat(bigDecimalLat);
-                addTest.setAddTestLon(bigDecimalLon);
-                addTest.setCreateTime(Calendar.getInstance().getTime());
-
-                addTestList.add(addTest);
-            }
-            this.dao.addList(addTestList);
+            addTestList.add(addTest);
         }
+        for (int i = 0; i < 500; i++) {
 
+            BigDecimal bigDecimalLat = cityCoordinate.getCityLat().subtract(new BigDecimal(0.0001 * i));
+            BigDecimal bigDecimalLon = cityCoordinate.getCityLon().subtract(new BigDecimal(0.0001 * i));
+            AddTest addTest = new AddTest();
+
+            addTest.setAddTestId(SnowFlakeId.generateID());
+            addTest.setAddTestName(cityCoordinate.getCityName() + i);
+            addTest.setAddTestLat(bigDecimalLat);
+            addTest.setAddTestLon(bigDecimalLon);
+            addTest.setCreateTime(Calendar.getInstance().getTime());
+
+            addTestList.add(addTest);
+        }
+        this.dao.addList(addTestList);
 
     }
 
+    /**
+     * 执行批量新增数据具体方法
+     */
+    public void addList() {
+        List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
+        for (CityCoordinate cityCoordinate : cityCoordinateList) {
+            this.addListmethod(cityCoordinate);
+        }
+    }
+
+    /**
+     * 批量新增数据执行方法
+     * * @return 实例对象
+     */
+    @Transactional
+    public void addListDisorderMethod(List<CityCoordinate> cityCoordinateList,int i) {
+        int length = cityCoordinateList.size();
+        int j = 1;
+        int k = 1;
+        List<AddTest> addTestList = new ArrayList<>();
+        for (CityCoordinate cityCoordinate : cityCoordinateList) {
+            BigDecimal bigDecimalLat = cityCoordinate.getCityLat().add(new BigDecimal(0.0001 * i));
+            BigDecimal bigDecimalLon = cityCoordinate.getCityLon().add(new BigDecimal(0.0001 * i));
+            AddTest addTest = new AddTest();
+
+            addTest.setAddTestId(SnowFlakeId.generateID());
+            addTest.setAddTestName(cityCoordinate.getCityName() + i);
+            addTest.setAddTestLat(bigDecimalLat);
+            addTest.setAddTestLon(bigDecimalLon);
+            addTest.setCreateTime(Calendar.getInstance().getTime());
+
+            addTestList.add(addTest);
+            if (j % 1000 == 0 || j == length) {
+                this.dao.addList(addTestList);
+                addTestList.clear();
+            }
+            j++;
+
+        }
+        for (CityCoordinate cityCoordinate : cityCoordinateList) {
+            BigDecimal bigDecimalLat1 = cityCoordinate.getCityLat().subtract(new BigDecimal(0.0001 * i));
+            BigDecimal bigDecimalLon1 = cityCoordinate.getCityLon().subtract(new BigDecimal(0.0001 * i));
+            AddTest addTest = new AddTest();
+
+            addTest.setAddTestId(SnowFlakeId.generateID());
+            addTest.setAddTestName(cityCoordinate.getCityName() + i);
+            addTest.setAddTestLat(bigDecimalLat1);
+            addTest.setAddTestLon(bigDecimalLon1);
+            addTest.setCreateTime(Calendar.getInstance().getTime());
+            addTestList.add(addTest);
+            if (k % 1000 == 0 || k == length) {
+                this.dao.addList(addTestList);
+                addTestList.clear();
+            }
+            k++;
+        }
+    }
+
+    /**
+     * 批量新增数据具体方法
+     * * @return 实例对象
+     */
+    public void addListDisorder() {
+        List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
+        for (int i = 0; i < 5; i++) {
+            this.addListDisorderMethod(cityCoordinateList,i);
+        }
+    }
 
     /**
      * 通过ID查询单条数据
