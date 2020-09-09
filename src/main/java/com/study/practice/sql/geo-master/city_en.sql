@@ -1,24 +1,4 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 101.200.77.107 (MySQL 5.6.14-log)
-# Database: learn_job
-# Generation Time: 2016-05-16 09:32:19 +0000
-# ************************************************************
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-SET NAMES utf8mb4;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 # Dump of table city_en
