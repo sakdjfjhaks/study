@@ -30,6 +30,7 @@ public class FileCopyUtil {
                 FileUtils.copyFile(inFile, outFile);
             } catch (IOException e) {
                 doBoolean = false;
+                System.out.println("存满报错");
             }
         }
 
