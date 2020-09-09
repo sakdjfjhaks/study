@@ -56,11 +56,13 @@ public class FileCopyUtil {
     public static void deleteFile(File file){
         if(file.isDirectory()){
             File[] files = file.listFiles();
-            for(File fileDelete:files){
-                if(fileDelete.isDirectory()){
-                    deleteFile(fileDelete);
+            if(files!=null){
+                for(File fileDelete:files){
+                    if(fileDelete.isDirectory()){
+                        deleteFile(fileDelete);
+                    }
+                    fileDelete.delete();
                 }
-                fileDelete.delete();
             }
         }
         file.delete();
