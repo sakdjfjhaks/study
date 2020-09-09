@@ -32,6 +32,9 @@ public class FileCopyUtil {
             }
         }
     }
+    /**
+     * 根据路径删除文件以及文件夹
+     * */
     public static void deleteFolder(){
         File file = new File(FileEnum.OUT_MIDER_PATH_2.getFilePath());
         deleteFile(file);
@@ -51,11 +54,4 @@ public class FileCopyUtil {
         }
         file.delete();
     }
-
-    public static void main(String[] args) throws IOException {
-//        FileCopyUtil.fileCopy("F:\\测试文件\\test.mp4","F:\\file_copy_test\\1.mp4");
-//        FileCopyUtil.deleteFolder();
-        FileCopyUtil.fileCopyInfinite(FileEnum.IN_FILE_PATH.getFilePath());
-    }
-
 }
