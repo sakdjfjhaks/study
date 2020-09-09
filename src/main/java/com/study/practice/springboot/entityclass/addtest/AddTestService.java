@@ -62,7 +62,6 @@ public class AddTestService {
      * 批量新增数据
      * * @return 实例对象
      */
-    @Transactional
     public void addListmethod(CityCoordinate cityCoordinate,int num) {
         List<AddTest> addTestList = new ArrayList<>();
         for (int i = 0; i < num; i++) {
@@ -110,7 +109,6 @@ public class AddTestService {
      * 批量新增数据执行方法
      * * @return 实例对象
      */
-    @Transactional
     public void addListDisorderMethod(List<CityCoordinate> cityCoordinateList,int i) {
         int length = cityCoordinateList.size();
         int j = 1;
