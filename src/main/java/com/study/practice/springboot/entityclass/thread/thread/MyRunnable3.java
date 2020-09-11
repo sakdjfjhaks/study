@@ -1,16 +1,19 @@
 package com.study.practice.springboot.entityclass.thread.thread;
 
-public class MyRunnable1 implements Runnable {
+public class MyRunnable3 implements Runnable {
     private Integer num;
+    private String name;
 
-    public MyRunnable1(Integer num) {
+    public MyRunnable3(Integer num,String name) {
         this.num = num;
+        this.name = name;
     }
 
     @Override
     public void run() {
         try {
-            Thread.sleep(1000L);
+            Thread.sleep(10);
+            Thread.currentThread().setName(name);
             System.out.println(num);
             System.out.println("当前线程的名字为：" + Thread.currentThread().getName());
         } catch (Exception e) {
