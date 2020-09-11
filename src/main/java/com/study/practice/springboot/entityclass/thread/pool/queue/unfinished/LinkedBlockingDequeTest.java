@@ -6,7 +6,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class LinkedBlockingDeque {
+public class LinkedBlockingDequeTest {
     public static void main(String[] args) throws InterruptedException {
         ThreadPoolExecutor executor =
                 new ThreadPoolExecutor(1, 2, 10000L,
