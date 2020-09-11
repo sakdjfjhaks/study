@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class LinkedBlockingDequeTest {
     public static void main(String[] args) throws InterruptedException {
         ThreadPoolExecutor executor =
-                new ThreadPoolExecutor(1, 2, 10000L,
+                new ThreadPoolExecutor(1, 1, 10000L,
                         TimeUnit.MICROSECONDS, new LinkedBlockingDeque<Runnable>(2),
                         new ThreadPoolExecutor.DiscardOldestPolicy()
                 );

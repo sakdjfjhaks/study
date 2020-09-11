@@ -12,7 +12,7 @@ public class MyRunnable3 implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(10);
+            Thread.sleep(1000);
             Thread.currentThread().setName(name);
             System.out.println(num);
             System.out.println("当前线程的名字为：" + Thread.currentThread().getName());
