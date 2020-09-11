@@ -1,4 +1,4 @@
-package com.study.practice.springboot.entityclass.thread.pool;
+package com.study.practice.springboot.entityclass.thread.pool.policy;
 
 import com.study.practice.springboot.entityclass.thread.thread.MyRunnable1;
 

@@ -1,4 +1,4 @@
-package com.study.practice.springboot.entityclass.thread.pool;
+package com.study.practice.springboot.entityclass.thread.pool.policy;
 
 import com.study.practice.springboot.entityclass.thread.thread.MyRunnable1;
 import com.study.practice.springboot.entityclass.thread.thread.MyRunnable2;
@@ -15,10 +15,10 @@ public class CallerRunPolicyTest {
                         new ThreadPoolExecutor.CallerRunsPolicy()
                 );
         for (Integer i = 1; i <= 50; i++) {
-            if(i<=11){
+            if (i <= 11) {
                 executor.execute(new MyRunnable1(i));
             }
-            if(i>11){
+            if (i > 11) {
                 executor.execute(new MyRunnable2(i));
             }
             System.out.println("当前线程池的数量为：" + executor.getPoolSize());
