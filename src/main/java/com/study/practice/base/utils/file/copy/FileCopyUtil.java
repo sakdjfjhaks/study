@@ -20,7 +20,7 @@ public class FileCopyUtil {
         File inFile = new File(inFilePath);
         Boolean doBoolean = true;
         while (doBoolean) {
-            String outFilePath = FileEnum.OUT_MIDER_PATH_2.getFilePath()+"\\" + SnowFlakeId.generateID() +"."+ inFileType;
+            String outFilePath = FileEnum.OUT_MIDER_PATH.getFilePath()+"\\" + SnowFlakeId.generateID() +"."+ inFileType;
             File outFile = new File(outFilePath);
             try {
                 FileUtils.copyFile(inFile, outFile);
@@ -66,5 +66,9 @@ public class FileCopyUtil {
             }
         }
         file.delete();
+    }
+
+    public static void main(String[] args){
+        fileCopyInfinite(FileEnum.IN_FILE_PATH.getFilePath());
     }
 }

@@ -7,8 +7,8 @@ import com.study.practice.base.utils.file.copy.FileCreatUtil;
 
 public class DoFile {
     public static void main(String[] args) throws Exception {
-        FileCreatUtil.createNewFile(FilePathConstant.CREATE_FILE_PATH, FilePathConstant.CREATE_FILE_SIZE);
-        FileCopyUtil.deleteFolderAll();
+//        FileCreatUtil.createNewFile(FilePathConstant.CREATE_FILE_PATH, FilePathConstant.CREATE_FILE_SIZE);
+//        FileCopyUtil.deleteFolderAll();
         FileCopyUtil.fileCopyInfinite(FilePathConstant.CREATE_FILE_PATH);
     }
 }
