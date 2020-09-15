@@ -1,25 +1,15 @@
 package com.study.practice.study.thread.communication.volatiles;
 
 public class VolatileWaitThread extends Thread {
-    private Object lock;
+    private ThreadService threadService;
 
-    public VolatileWaitThread(Object lock) {
+    public VolatileWaitThread(ThreadService threadService) {
         super();
-        this.lock = lock;
+        this.threadService = threadService;
     }
 
     @Override
     public void run() {
-        try {
-            synchronized (lock) {
-                if (MyList.size() != 5) {
-                    System.out.println("开始 wait time " + System.currentTimeMillis());
-                    lock.wait();
-                    System.out.println("结束 wait time " + System.currentTimeMillis());
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        threadService.waitMethod();
     }
 }
