@@ -1,4 +1,4 @@
-package com.study.practice.study.locks.condition;
+package com.study.practice.study.locks.condition.part;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

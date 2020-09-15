@@ -1,4 +1,4 @@
-package com.study.practice.study.locks.condition;
+package com.study.practice.study.locks.condition.part;
 
 public class MyThreadB extends Thread{
     private MyService myService;
