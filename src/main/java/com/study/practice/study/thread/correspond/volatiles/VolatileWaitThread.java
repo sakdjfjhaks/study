@@ -1,4 +1,4 @@
-package com.study.practice.study.thread.communication.volatiles;
+package com.study.practice.study.thread.correspond.volatiles;
 
 public class VolatileWaitThread extends Thread {
     private ThreadService threadService;

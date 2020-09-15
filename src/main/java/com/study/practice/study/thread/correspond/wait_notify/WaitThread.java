@@ -1,4 +1,4 @@
-package com.study.practice.study.thread.communication.wait_notify;
+package com.study.practice.study.thread.correspond.wait_notify;
 
 public class WaitThread extends Thread {
     private MyList list;

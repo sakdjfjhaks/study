@@ -1,4 +1,4 @@
-package com.study.practice.study.thread.communication.volatiles;
+package com.study.practice.study.thread.correspond.volatiles;
 
 public class VolatileTest {
     public static void main(String[] args) {

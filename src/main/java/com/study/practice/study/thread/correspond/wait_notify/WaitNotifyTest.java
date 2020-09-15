@@ -1,4 +1,4 @@
-package com.study.practice.study.thread.communication.wait_notify;
+package com.study.practice.study.thread.correspond.wait_notify;
 
 public class WaitNotifyTest {
     public static void main(String[] args) throws InterruptedException {

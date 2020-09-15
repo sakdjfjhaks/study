@@ -1,4 +1,4 @@
-package com.study.practice.study.thread.communication.volatiles;
+package com.study.practice.study.thread.correspond.volatiles;
 
 import java.util.ArrayList;
 import java.util.List;
