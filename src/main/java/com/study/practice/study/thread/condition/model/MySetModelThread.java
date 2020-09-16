@@ -1,4 +1,4 @@
-package com.study.practice.study.locks.condition.model;
+package com.study.practice.study.thread.condition.model;
 
 public class MySetModelThread extends  Thread {
 

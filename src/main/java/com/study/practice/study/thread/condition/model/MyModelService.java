@@ -1,7 +1,6 @@
-package com.study.practice.study.locks.condition.model;
+package com.study.practice.study.thread.condition.model;
 
 import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MyModelService {

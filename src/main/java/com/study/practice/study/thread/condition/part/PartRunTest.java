@@ -1,4 +1,4 @@
-package com.study.practice.study.locks.condition.part;
+package com.study.practice.study.thread.condition.part;
 
 public class PartRunTest {
     public static void main(String[] args) throws InterruptedException {

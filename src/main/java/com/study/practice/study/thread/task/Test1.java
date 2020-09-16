@@ -1,8 +1,6 @@
-package com.study.practice.study.task;
+package com.study.practice.study.thread.task;
 
-import java.util.Date;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class Test1 {
     public static void main(String[] args) throws InterruptedException {

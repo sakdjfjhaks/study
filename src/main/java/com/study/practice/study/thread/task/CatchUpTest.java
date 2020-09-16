@@ -1,4 +1,4 @@
-package com.study.practice.study.task;
+package com.study.practice.study.thread.task;
 
 import java.util.Date;
 import java.util.Timer;
