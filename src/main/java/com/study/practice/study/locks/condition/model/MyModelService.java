@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MyModelService {
-    private Lock lock = new ReentrantLock();
+    private ReentrantLock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
     private boolean hasValue = false;
 
@@ -15,7 +15,7 @@ public class MyModelService {
             if(hasValue == true){
                 condition.await();
             }
-            System.out.println("打印★");
+            System.out.println("set 打印★");
             hasValue = true;
             condition.signal();
         } catch (InterruptedException e) {
@@ -30,7 +30,7 @@ public class MyModelService {
             if(hasValue == false){
                 condition.await();
             }
-            System.out.println("打印☆");
+            System.out.println("get 打印☆");
             hasValue = false;
             condition.signal();
         } catch (InterruptedException e) {
