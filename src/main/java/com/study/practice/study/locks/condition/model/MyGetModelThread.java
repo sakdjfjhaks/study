@@ -9,7 +9,8 @@ public class MyGetModelThread extends Thread {
     @Override
     public void run(){
         for (int i = 0;i<Integer.MAX_VALUE;i++){
-            myModelService.get();
+//            myModelService.get();
+            myModelService.getMore();
         }
     }
 }
