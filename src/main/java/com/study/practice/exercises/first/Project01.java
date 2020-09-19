@@ -6,7 +6,7 @@ package com.study.practice.exercises.first;
  */
 public class Project01 {
     public static void main(String[] args) {
-        Integer month = 99;
+        Integer month = 45;
         System.out.println("第" + month + "个月的对数为： " + num(month));
     }
 
