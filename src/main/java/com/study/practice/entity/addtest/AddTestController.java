@@ -40,6 +40,7 @@ public class AddTestController {
         service.addList();
         return new BaseResponse(true, "添加成功");
     }
+
     @PostMapping("/addListDisorder")
     public BaseResponse addListDisorder() {
         service.addListDisorder();

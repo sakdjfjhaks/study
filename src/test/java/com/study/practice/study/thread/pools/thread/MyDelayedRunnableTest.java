@@ -7,7 +7,7 @@ public class MyDelayedRunnableTest implements Runnable, Delayed {
     private Integer num;
     private String name;
 
-    public MyDelayedRunnableTest(Integer num,String name) {
+    public MyDelayedRunnableTest(Integer num, String name) {
         this.num = num;
         this.name = name;
     }
@@ -23,6 +23,7 @@ public class MyDelayedRunnableTest implements Runnable, Delayed {
             e.printStackTrace();
         }
     }
+
     @Override
     public int compareTo(Delayed o) {
         return 0;

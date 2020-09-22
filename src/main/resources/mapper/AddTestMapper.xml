@@ -49,12 +49,12 @@
     </insert>
     <insert id="addList" parameterType="java.util.List">
         insert into add_test (
-            add_test_id,
-                    add_test_name,
-                    add_test_lat,
-                    add_test_lon,
-                    create_time
-         )values
+        add_test_id,
+        add_test_name,
+        add_test_lat,
+        add_test_lon,
+        create_time
+        )values
 
         <foreach collection="list" item="item" index="index" separator=",">
 

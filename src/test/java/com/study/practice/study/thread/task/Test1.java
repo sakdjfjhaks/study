@@ -22,7 +22,7 @@ public class Test1 {
 //        timer3.schedule(myTask,4000);
 
         Timer timer4 = new Timer();
-        timer4.schedule(myTask,4000,4000);
+        timer4.schedule(myTask, 4000, 4000);
 
         Thread.sleep(Integer.MAX_VALUE);
     }

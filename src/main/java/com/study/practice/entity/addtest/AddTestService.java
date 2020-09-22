@@ -24,7 +24,7 @@ public class AddTestService {
     private AddTestDao dao;
     @Resource
     private CityCoordinateService cityCoordinateService;
-    int num=50;
+    int num = 50;
 
     /**
      * 查询多条数据
@@ -100,7 +100,7 @@ public class AddTestService {
     public void addList() {
         List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
         for (CityCoordinate cityCoordinate : cityCoordinateList) {
-            this.addListmethod(cityCoordinate,num);
+            this.addListmethod(cityCoordinate, num);
         }
     }
 
@@ -108,7 +108,7 @@ public class AddTestService {
      * 批量新增数据执行方法
      * * @return 实例对象
      */
-    public void addListDisorderMethod(List<CityCoordinate> cityCoordinateList,int i) {
+    public void addListDisorderMethod(List<CityCoordinate> cityCoordinateList, int i) {
         int length = cityCoordinateList.size();
         int j = 1;
         int k = 1;
@@ -158,7 +158,7 @@ public class AddTestService {
     public void addListDisorder() {
         List<CityCoordinate> cityCoordinateList = cityCoordinateService.getAll();
         for (int i = 0; i < num; i++) {
-            this.addListDisorderMethod(cityCoordinateList,i);
+            this.addListDisorderMethod(cityCoordinateList, i);
         }
     }
 

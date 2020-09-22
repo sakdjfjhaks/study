@@ -14,7 +14,7 @@ public class PriorityBlockingQueueTest {
                         new ThreadPoolExecutor.DiscardOldestPolicy()
                 );
         for (Integer i = 10; i >= 1; i--) {
-            executor.execute(new MyRunnablePriority(i, "thread name is:" + i,i));
+            executor.execute(new MyRunnablePriority(i, "thread name is:" + i, i));
             System.out.println("进入线程池的顺序：" + i);
         }
     }

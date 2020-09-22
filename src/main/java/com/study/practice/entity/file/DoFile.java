@@ -1,9 +1,7 @@
 package com.study.practice.entity.file;
 
 import com.study.practice.base.paramter.constant.FilePathConstant;
-import com.study.practice.base.paramter.enums.file.FileEnum;
 import com.study.practice.base.utils.file.copy.FileCopyUtil;
-import com.study.practice.base.utils.file.copy.FileCreatUtil;
 
 public class DoFile {
     public static void main(String[] args) throws Exception {

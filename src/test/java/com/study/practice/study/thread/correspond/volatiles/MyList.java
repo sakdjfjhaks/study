@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyList {
-     volatile private List<String> list = new ArrayList();
+    volatile private List<String> list = new ArrayList();
 
-    public  void add() {
+    public void add() {
         list.add("test");
     }
 
-    public  Integer size() {
+    public Integer size() {
         return list.size();
     }
 }

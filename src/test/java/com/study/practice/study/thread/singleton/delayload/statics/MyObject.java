@@ -1,15 +1,16 @@
 package com.study.practice.study.thread.singleton.delayload.statics;
 
 public class MyObject {
-    private  static MyObject myObject = null;
+    private static MyObject myObject = null;
 
-    private MyObject(){}
+    private MyObject() {
+    }
 
     static {
         myObject = new MyObject();
     }
 
-    public static MyObject getInstance(){
+    public static MyObject getInstance() {
         return myObject;
     }
 }

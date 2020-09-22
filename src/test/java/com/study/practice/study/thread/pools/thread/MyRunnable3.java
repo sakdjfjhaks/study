@@ -4,7 +4,7 @@ public class MyRunnable3 implements Runnable {
     private Integer num;
     private String name;
 
-    public MyRunnable3(Integer num,String name) {
+    public MyRunnable3(Integer num, String name) {
         this.num = num;
         this.name = name;
     }

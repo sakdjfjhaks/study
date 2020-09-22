@@ -9,7 +9,7 @@ public class FutureTest {
         long start = System.currentTimeMillis();
 
         // 等凉菜
-        Callable ca1 = new Callable(){
+        Callable ca1 = new Callable() {
 
             @Override
             public String call() throws Exception {
@@ -25,12 +25,12 @@ public class FutureTest {
         new Thread(ft1).start();
 
         // 等包子 -- 必须要等待返回的结果，所以要调用join方法
-        Callable ca2 = new Callable(){
+        Callable ca2 = new Callable() {
 
             @Override
             public Object call() throws Exception {
                 try {
-                    Thread.sleep(1000*3);
+                    Thread.sleep(1000 * 3);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -44,6 +44,6 @@ public class FutureTest {
         System.out.println(ft2.get());
 
         long end = System.currentTimeMillis();
-        System.out.println("准备完毕时间："+(end-start));
+        System.out.println("准备完毕时间：" + (end - start));
     }
 }

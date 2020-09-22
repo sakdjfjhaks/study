@@ -1,7 +1,7 @@
 package com.study.practice.study.thread.singleton.delayload.statics;
 
 public class Run {
-    public static  void main(String[] args){
+    public static void main(String[] args) {
         MyThread myThread1 = new MyThread();
         MyThread myThread2 = new MyThread();
         MyThread myThread3 = new MyThread();

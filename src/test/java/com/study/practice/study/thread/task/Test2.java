@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Test2 {
-    static class MyTask extends TimerTask{
+    static class MyTask extends TimerTask {
 
         @Override
         public void run() {
@@ -19,11 +19,11 @@ public class Test2 {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Long nowTime = System.currentTimeMillis();
 
         MyTask myTask = new MyTask();
         Timer timer = new Timer();
-        timer.schedule(myTask,new Date(nowTime),3000);
+        timer.schedule(myTask, new Date(nowTime), 3000);
     }
 }

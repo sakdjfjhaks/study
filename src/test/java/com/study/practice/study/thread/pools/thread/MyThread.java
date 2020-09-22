@@ -16,7 +16,7 @@ public class MyThread extends Thread {
         try {
             Thread.sleep(1000L);
             System.out.println("this is MyThread:" + Thread.currentThread().getName());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
