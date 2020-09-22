@@ -1,6 +1,7 @@
 package com.study.practice.async.task;
 
 import com.study.practice.base.paramter.constant.AsyncTaskConstant;
+import com.study.practice.base.paramter.constant.ScheduledConstant;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -11,7 +12,7 @@ import java.util.concurrent.Future;
 @Component
 public class AsyncTask {
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = ScheduledConstant.FIXED_DELAY_TIME_ONE_MINUTE)
     @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
     public Future<Boolean> doTask11() throws Exception {
         long start = System.currentTimeMillis();
@@ -21,7 +22,7 @@ public class AsyncTask {
         return new AsyncResult<>(true);
     }
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = ScheduledConstant.FIXED_DELAY_TIME_ONE_MINUTE)
     @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
     public Future<Boolean> doTask22() throws Exception {
         long start = System.currentTimeMillis();
@@ -31,7 +32,7 @@ public class AsyncTask {
         return new AsyncResult<>(true);
     }
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = ScheduledConstant.FIXED_DELAY_TIME_ONE_MINUTE)
     @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
     public Future<Boolean> doTask33() throws Exception {
         long start = System.currentTimeMillis();
