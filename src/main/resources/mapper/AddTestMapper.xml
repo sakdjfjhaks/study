@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study.practice.springboot.entityclass.addtest.AddTestDao">
-    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.addtest.AddTest">
+<mapper namespace="com.study.practice.entity.addtest.AddTestDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.entity.addtest.AddTest">
         <id column="add_test_id" jdbcType="BIGINT" property="addTestId"/>
         <result column="add_test_name" jdbcType="VARCHAR" property="addTestName"/>
         <result column="add_test_lat" jdbcType="DECIMAL" property="addTestLat"/>
@@ -30,7 +30,7 @@
         order by add_test_id desc
     </select>
     <!--添加-->
-    <insert id="add" parameterType="com.study.practice.springboot.entityclass.addtest.AddTest">
+    <insert id="add" parameterType="com.study.practice.entity.addtest.AddTest">
         insert into add_test (
         add_test_id,
         add_test_name,
@@ -68,7 +68,7 @@
         </foreach>
     </insert>
     <!--修改-->
-    <update id="update" parameterType="com.study.practice.springboot.entityclass.addtest.AddTest">
+    <update id="update" parameterType="com.study.practice.entity.addtest.AddTest">
         update add_test
         <set>
             <if test="addTestName != null and addTestName !='' ">

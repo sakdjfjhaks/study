@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study.practice.springboot.entityclass.citycn.CityCnDao">
-    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.citycn.CityCn">
+<mapper namespace="com.study.practice.entity.citycn.CityCnDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.entity.citycn.CityCn">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="country" jdbcType="VARCHAR" property="country"/>
         <result column="state" jdbcType="VARCHAR" property="state"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinateDao">
-    <resultMap id="BaseResultMap" type="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+<mapper namespace="com.study.practice.entity.citycoordinate.CityCoordinateDao">
+    <resultMap id="BaseResultMap" type="com.study.practice.entity.citycoordinate.CityCoordinate">
         <id column="city_id" jdbcType="BIGINT" property="cityId"/>
         <result column="city_name" jdbcType="VARCHAR" property="cityName"/>
         <result column="city_lat" jdbcType="DECIMAL" property="cityLat"/>
@@ -30,7 +30,7 @@
         order by city_id desc
     </select>
     <!--添加-->
-    <insert id="add" parameterType="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+    <insert id="add" parameterType="com.study.practice.entity.citycoordinate.CityCoordinate">
         insert into city_coordinate (
             city_id,
                     city_name,
@@ -46,7 +46,7 @@
         )
     </insert>
     <!--修改-->
-    <update id="update" parameterType="com.study.practice.springboot.entityclass.citycoordinate.CityCoordinate">
+    <update id="update" parameterType="com.study.practice.entity.citycoordinate.CityCoordinate">
         update city_coordinate
         <set>
             <if test="cityName != null and cityName !='' ">
