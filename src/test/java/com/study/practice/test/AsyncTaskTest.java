@@ -36,8 +36,4 @@ public class AsyncTaskTest {
         System.out.println(times);
 
     }
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
 }
