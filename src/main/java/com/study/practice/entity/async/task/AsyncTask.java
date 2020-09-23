@@ -1,4 +1,4 @@
-package com.study.practice.async.task;
+package com.study.practice.entity.async.task;
 
 import com.study.practice.base.paramter.constant.AsyncTaskConstant;
 import com.study.practice.base.paramter.constant.ScheduledConstant;
@@ -12,8 +12,8 @@ import java.util.concurrent.Future;
 @Component
 public class AsyncTask {
 
-    @Scheduled(fixedDelay = ScheduledConstant.ONE_MINUTE)
-    @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
+    @Scheduled(fixedDelay = 1000)
+    @Async("taskExecutor")
     public Future<Boolean> doTask11() throws Exception {
         long start = System.currentTimeMillis();
         Thread.sleep(3000);
@@ -22,8 +22,8 @@ public class AsyncTask {
         return new AsyncResult<>(true);
     }
 
-    @Scheduled(fixedDelay = ScheduledConstant.ONE_MINUTE)
-    @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
+    @Scheduled(fixedDelay = 1000)
+    @Async("taskExecutor")
     public Future<Boolean> doTask22() throws Exception {
         long start = System.currentTimeMillis();
         Thread.sleep(3000);
@@ -32,8 +32,8 @@ public class AsyncTask {
         return new AsyncResult<>(true);
     }
 
-    @Scheduled(fixedDelay = ScheduledConstant.ONE_MINUTE)
-    @Async(AsyncTaskConstant.TASK_EXECUTOR_NAME)
+    @Scheduled(fixedDelay = 1000)
+    @Async("taskExecutor")
     public Future<Boolean> doTask33() throws Exception {
         long start = System.currentTimeMillis();
         Thread.sleep(3000);
