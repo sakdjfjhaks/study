@@ -2,6 +2,7 @@ package com.study.practice.entity.aop.aspect;
 
 import com.study.practice.base.aop.first.First;
 import com.study.practice.base.aop.message.Message;
+import com.study.practice.base.aop.second.Second;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,7 @@ public class FirstController {
     }
 
     @RequestMapping("/second")
+    @Second
     public void second(){
         System.out.println("second method");
     }
