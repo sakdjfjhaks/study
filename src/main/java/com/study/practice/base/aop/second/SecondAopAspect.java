@@ -26,7 +26,7 @@ public class SecondAopAspect {
         // pjp.proceed()获取原方法的返回值
         //当使用环绕通知时，这个方法必须调用，否则拦截到的方法就不会再执行了
         Object o = pjp.proceed();
-        logger.info("----环绕通知----");
+        logger.info("----环绕通知----" + o);
 //        // 可以修改值
 //        if (o != null && o.getClass().toString().indexOf("Map") > 0){
 //            Map map = (Map) o;

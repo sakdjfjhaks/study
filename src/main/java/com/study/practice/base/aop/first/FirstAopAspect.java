@@ -17,16 +17,18 @@ public class FirstAopAspect {
     public void first() {
     }
 
-//    // 环绕通知
-//    @Around("first()")
-//    public void doAround(ProceedingJoinPoint pjp) throws Throwable {
-//        System.out.println("around method");
-//}
-//    // 前置通知
-//    @Before("first()")
-//    public void beforeMethod(JoinPoint joinPoint) {
-//        System.out.println("before method");
-//    }
+    // 环绕通知
+    @Around("first()")
+    public void doAround(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("around method1");
+        pjp.proceed();
+        System.out.println("around method2");
+}
+    // 前置通知
+    @Before("first()")
+    public void beforeMethod(JoinPoint joinPoint) {
+        System.out.println("before method");
+    }
 
     // 后置通知
     @After("first()&&@annotation(First))")
@@ -34,19 +36,19 @@ public class FirstAopAspect {
         System.out.println("after method");
     }
 
-//    /**
-//     *
-//     * @param joinpoint
-//     * @param rvt 返回值
-//     */
-//    @AfterReturning(pointcut = "first()", returning = "rvt")
-//    public void afterReturningMethod(JoinPoint joinpoint, Object rvt) {
-//        System.out.println("AfterReturning method");
-//    }
-//
-//    // 异常通知
-//    @AfterThrowing(pointcut = "first()")
-//    public void afterThrowingMethod(JoinPoint joinPoint) {
-//        System.out.println("AfterThrowing method");
-//    }
+    /**
+     *
+     * @param joinpoint
+     * @param rvt 返回值
+     */
+    @AfterReturning(pointcut = "first()", returning = "rvt")
+    public void afterReturningMethod(JoinPoint joinpoint, Object rvt) {
+        System.out.println("AfterReturning method");
+    }
+
+    // 异常通知
+    @AfterThrowing(pointcut = "first()")
+    public void afterThrowingMethod(JoinPoint joinPoint) {
+        System.out.println("AfterThrowing method");
+    }
 }
