@@ -20,13 +20,14 @@ public class FirstAopAspect {
     // 环绕通知
     @Around("first()")
     public void doAround(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("around method1");
+        System.out.println(pjp.toString());
         pjp.proceed();
         System.out.println("around method2");
 }
     // 前置通知
     @Before("first()")
     public void beforeMethod(JoinPoint joinPoint) {
+        System.out.println(joinPoint.toString());
         System.out.println("before method");
     }
 
