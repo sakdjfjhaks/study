@@ -1,5 +1,6 @@
 package com.study.practice.test;
 
+import com.study.practice.base.aop.first.First;
 import com.study.practice.entity.async.task.AsyncTask;
 import com.study.practice.entity.email.Email;
 import com.study.practice.entity.email.SendEmailService;
@@ -30,6 +31,10 @@ public class SendEmailTest {
         };
         email.setToEmailUsers(emailUsers);
         sendEmailService.sendSimpleEmail(email);
+    }
+    @Test
+    public void test3() throws Exception {
+        System.out.println("llllll");
     }
 
     @Test
