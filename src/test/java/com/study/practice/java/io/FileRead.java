@@ -16,4 +16,5 @@ public class FileRead {
         String string = bufferedReader.readLine();
         return string;
     }
+
 }
