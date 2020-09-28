@@ -1,5 +1,6 @@
 package com.study.practice.entity.addtest;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -7,12 +8,31 @@ import java.util.Date;
  * @author wangkun
  * @date 2020-09-07
  */
-public class AddTest {
+public class AddTest implements Serializable {
     private Long addTestId;
     private String addTestName;
     private BigDecimal addTestLat;
     private BigDecimal addTestLon;
     private Date createTime;
+
+    @Override
+    public String toString() {
+        return "AddTest{" +
+                "addTestId=" + addTestId +
+                ", addTestName='" + addTestName + '\'' +
+                ", addTestLat=" + addTestLat +
+                ", addTestLon=" + addTestLon +
+                ", createTime=" + createTime +
+                '}';
+    }
+
+    public AddTest(Long addTestId, String addTestName) {
+        this.addTestId = addTestId;
+        this.addTestName = addTestName;
+    }
+
+    public AddTest() {
+    }
 
     public Long getAddTestId() {
         return addTestId;
