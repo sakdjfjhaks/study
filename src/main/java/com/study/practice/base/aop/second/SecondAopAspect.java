@@ -15,7 +15,7 @@ public class SecondAopAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     // 定义切点Pointcut
-    @Pointcut("execution(* com.study.practice..*.*(..))")
+    @Pointcut("execution(* com.study.practice.entity..*.*(..))")
     public void excudeService() {
     }
 

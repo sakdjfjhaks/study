@@ -8,13 +8,14 @@ import java.io.*;
 public class ObjectStream {
 
     public static void main(String[] args) {
-        ObjectStream l = new ObjectStream();
+        ObjectStream objectStream = new ObjectStream();
         String filePath = "F:\\666\\" + SnowFlakeId.generateID() +".txt";
         AddTest addTest = new AddTest(1L,"你好");
         System.out.println(addTest.toString());
-
-        l.writerStream(filePath,addTest);
-        System.out.println(l.readerStream(filePath));
+        String s = "dasd";
+        objectStream.writerStream(filePath,addTest);
+        objectStream.writerStream(filePath,s);
+        System.out.println(objectStream.readerStream(filePath));
     }
 
     public <T> void writerStream (String filePath,T t) {
@@ -22,6 +23,7 @@ public class ObjectStream {
             FileOutputStream fileOutputStream = new FileOutputStream(filePath);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(t);
+            objectOutputStream.flush();
             objectOutputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,9 +34,9 @@ public class ObjectStream {
         try {
             FileInputStream fileOutputStream = new FileInputStream(filePath);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileOutputStream);
-            Object object = objectInputStream.readObject();
+            T value = (T) objectInputStream.readObject();
             objectInputStream.close();
-            return (T)object;
+            return value;
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
